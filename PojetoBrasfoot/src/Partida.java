@@ -17,7 +17,10 @@ public class Partida {
     }
 
     public void simularPartida(){
-        System.out.println("oi");
+        System.out.println("------------------------------------------");
+        System.out.println(time1.getNome()+" X "+ time2.getNome() );
+        
+
     }
 
 }
