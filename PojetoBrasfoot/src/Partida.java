@@ -20,7 +20,7 @@ public class Partida {
         System.out.println("------------------------------------------");
         System.out.println(time1.getNome()+" X "+ time2.getNome() );
         for(int fp = 0;fp<=45;fp++){
-            if(random(10) == 10){
+            if(random.nextInt(1,10) == 10){
                 System.out.println("Oi");
             }
 

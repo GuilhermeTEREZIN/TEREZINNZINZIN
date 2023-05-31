@@ -9,7 +9,7 @@ public enum Posicao {
     CA("CENTRO AVANTE"),
     PTE("PONTA ESQUERDA"),
     PTD("PONTA DIREITA"),
-    VOL("VOLANTE"),
+    VOL("VOLANTE");
     
     
     private String posi;
