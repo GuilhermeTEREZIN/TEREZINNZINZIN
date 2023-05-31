@@ -16,14 +16,16 @@ public class Partida {
     }
 
     public void simularPartida(){
-        Random random = new Random();
+        Random r = new Random();
         System.out.println("------------------------------------------");
         System.out.println(time1.getNome()+" X "+ time2.getNome() );
-        for(int fp = 0;fp<=45;fp++){
-            if(random.nextInt(1,10) == 10){
-                System.out.println("Oi");
+        int x = 0;
+        for(int i = 0;i<=45;i++){
+            x = r.nextInt(6);
+            if (x == 5){
+                System.out.println("Minuto: "+i);
+                
             }
-
         }
         
 
