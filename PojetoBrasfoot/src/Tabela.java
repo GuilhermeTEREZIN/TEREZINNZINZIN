@@ -8,4 +8,5 @@ public interface Tabela {
     int getGolssofridos();
     int setGolssofridos();
 
+
 }
