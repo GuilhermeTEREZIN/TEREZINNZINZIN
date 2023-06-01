@@ -1,2 +1,3 @@
-public class Tabela {
+public interface Tabela {
+
 }

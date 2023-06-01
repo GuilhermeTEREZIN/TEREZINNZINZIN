@@ -4,14 +4,6 @@ import static java.lang.Math.round;
 
 public class Partida {
 
-
-//    public static int calcularForcaAtaque(Time time){
-//        return round((time.getOverAtk+time.getOveMid())/2);
-//    }
-//    public static int calcularForcaDefesa(Time time){
-//        return round((time.getOverAtk+time.getOveMid())/2);
-//
-
     public static void simularPartida(Time time1, Time time2){
         Random r = new Random();
         int t1gols = 0;
@@ -26,6 +18,18 @@ public class Partida {
             if(x == 0){
                 t1 = r.nextInt(100);
                 t2 = r.nextInt(100);
+                if (t1> t2){ //chance do time 1
+                    int chance = r.nextInt(100);
+                    if (chance<= 20){
+
+                    }else{
+                        if (r.nextInt(5)==0){ // chance de contra ataque
+
+                        }
+                    }
+                } else if (t2>t1) {//chance do time 2
+
+                }
                 System.out.println(i+"' - ");
 
             }
