@@ -1,33 +1,30 @@
 import java.util.Random;
 
+import static java.lang.Math.round;
+
 public class Partida {
-    private Time time1;
-    private Time time2;
 
-    public Partida(Time time1,Time time2){
-        this.time1 = time1;
-        this.time2 = time2;
-    }
-    public Time getTime1() {
-        return time1;
-    }
-    public Time getTime2() {
-        return time2;
-    }
 
-    public void simularPartida(){
+//    public static int calcularForcaAtaque(Time time){
+//        return round((time.getOverAtk+time.getOveMid())/2);
+//    }
+//    public static int calcularForcaDefesa(Time time){
+//        return round((time.getOverAtk+time.getOveMid())/2);
+//    }
+
+    public static void simularPartida(Time time1, Time time2){
         Random r = new Random();
         System.out.println("------------------------------------------");
         System.out.println(time1.getNome()+" X "+ time2.getNome() );
         int x = 0;
         for(int i = 0;i<=45;i++){
-            x = r.nextInt(6);
-            if (x == 5){
-                System.out.println("Minuto: "+i);
-                
+            x = r.nextInt(5);
+            if(x == 0){
+                System.out.println(x);
             }
+
         }
-        
+
 
     }
 

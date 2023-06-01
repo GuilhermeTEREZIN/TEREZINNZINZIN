@@ -4,7 +4,6 @@ public abstract class Jogador {
     private int idade;
     private String posicao;
     private int overall;
-
     private int numero;
 
     public Jogador(String nome, String pais, int idade, String posicao,int overall, int numero){
