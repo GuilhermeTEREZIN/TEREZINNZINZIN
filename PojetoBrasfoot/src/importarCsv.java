@@ -2,10 +2,10 @@ import java.io.*;
 import java.util.Scanner;
 public class importarCsv
 {
-    public static void main(String[] args) throws Exception
+    public static void times(String nomeArquivo) throws Exception
     {
 //parsing a CSV file into Scanner class constructor
-        File file = new File("./PojetoBrasFoot/base/time.CSV");
+        File file = new File("./PojetoBrasFoot/base/"+nomeArquivo+".csv");
 //        System.out.println(file.exists());
         Scanner sc = new Scanner(file);
         sc.useDelimiter(",");   //sets the delimiter pattern
