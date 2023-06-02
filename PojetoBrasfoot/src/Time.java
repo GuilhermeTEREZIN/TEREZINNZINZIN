@@ -32,7 +32,6 @@ public class Time {
     jogadores.add(j);
   }
 
-<<<<<<< Updated upstream
   public int over(ArrayList<Jogador> jogadores) {
     int Over = 0;
     int Contador = 0;
@@ -67,9 +66,7 @@ public class Time {
       }
     }
     return round(Over / Contador);
-
   }
-
   public int overAtaque(ArrayList<Jogador> jogadores) {
     int Over = 0;
     int Contador = 0;
@@ -80,7 +77,6 @@ public class Time {
       }
     }
     return round(Over / Contador);
-
   }
    public int calcularForcaAtaque(){
       return round((overAtaque(this.titulares)+overMeio(this.titulares))/2);
@@ -88,14 +84,7 @@ public class Time {
    public int calcularForcaDefesa(){
      return overDefesa(this.titulares);
   }
-=======
-  
 
-
-
-
-
->>>>>>> Stashed changes
 }
 
 

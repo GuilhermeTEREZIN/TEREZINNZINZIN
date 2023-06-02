@@ -3,6 +3,10 @@ import java.util.Random;
 import static java.lang.Math.round;
 
 public class Partida {
+    //fazer um método estatico calcularBonus que tenha como entrada time1 e time2
+    //se a diferença entre o poder de ataque do time1 e o poder de defesa do time 2 for positiva
+
+        //retorna a metade dessa diferença
 
     public static void simularPartida(Time time1, Time time2){
         Random r = new Random();
@@ -29,7 +33,8 @@ public class Partida {
                         System.out.println(time1.getNome()+" "+t1gols+" X "+t2gols+" "+time2.getNome());
 
                     }else{
-                        if (r.nextInt(5)==0){ // chance de contra ataque
+                        chance = r.nextInt(5);
+                        if (chance==0){ // chance de contra ataque
                             chance = r.nextInt();
                             if(chance<=20){ // gol de contra ataque
                                 t2gols += 1;
@@ -45,7 +50,8 @@ public class Partida {
                         System.out.println(i+"' - "+"Gol do "+time2.getNome());
                         System.out.println(time1.getNome()+" "+t1gols+" X "+t2gols+" "+time2.getNome());
                     }else{
-                        if (r.nextInt(5)==0){ // chance de contra ataque
+                        chance = r.nextInt(5);
+                        if (chance==0){ // chance de contra ataque
                             chance = r.nextInt();
                             if(chance<=20){ // gol de contra ataque
                                 t1gols += 1;
