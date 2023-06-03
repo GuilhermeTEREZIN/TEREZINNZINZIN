@@ -8,7 +8,7 @@ public class Menu {
         while (opcao != 3) {
             System.out.println("Menu:");
             System.out.println("1. Novo Jogo");
-            System.out.println("2. Meu Ponto");
+            System.out.println("2. Continuar");
             System.out.println("3. Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -20,14 +20,15 @@ public class Menu {
                     // Coloque aqui o código para iniciar um novo jogo
                     break;
                 case 2:
-                    System.out.println("Opção selecionada: Meu Ponto");
+                    System.out.println("Opção selecionada: Continuar");
                     // Coloque aqui o código para exibir informações sobre o seu ponto
                     break;
                 case 3:
                     System.out.println("Opção selecionada: Sair");
+                    System.exit(0);
                     break;
                 default:
-                    System.out.println("Opção inválida! Escolha uma opção válida.");
+                    System.out.println("");
                     break;
             }
 
