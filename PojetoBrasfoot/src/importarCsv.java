@@ -1,19 +1,28 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class importarCsv
 {
-    public static void times(String nomeArquivo) throws Exception
+    public static ArrayList<Time> times() throws Exception
     {
-//parsing a CSV file into Scanner class constructor
-        File file = new File("./PojetoBrasFoot/base/"+nomeArquivo+".csv");
+        ArrayList<Time>  times = new ArrayList<>(); // cria uma lista de times
+        String nomeTime[];//Variavel para auxiliar na extração dos dados
+
+        File file = new File("./PojetoBrasFoot/base/time.csv"); // abre o arquivo csv
 //        System.out.println(file.exists());
-        Scanner sc = new Scanner(file);
-        sc.useDelimiter(",");   //sets the delimiter pattern
-        //System.out.println("aaaaaaa");
+        Scanner sc = new Scanner(file);//inicia a classe scanner
+       // sc.useDelimiter(",");   //sets the delimiter pattern
         while (sc.hasNext())  //returns a boolean value
         {
-            System.out.print(sc.next());  //find and returns the next complete token from this scanner
+            nomeTime = sc.next().split(","); // Separa o id do nome do time
+            //nomeTime[0] = id
+            //nomeTime[1] = nome do time
+            times.add(new Time(Integer.parseInt(nomeTime[0].strip()),nomeTime[1].strip()));//adciona o time a lista de times
         }
         sc.close();  //closes the scanner
+        return times; //retorna a lista de times
+
     }
+
+    //public static ArrayList<Jogador> jogadores() throws Exception
 }
