@@ -4,6 +4,7 @@ import static java.lang.Math.round;
 
 public class Time {
   private int id;
+  private Pais pais;
   private String nome;
   private ArrayList<Jogador> jogadores;
   private ArrayList<Jogador> titulares;
@@ -12,6 +13,7 @@ public class Time {
   public Time(int id, String nome) {
     this.nome = nome;
     this.id = id;
+    this.pais = Pais.BRA;
     jogadores = new ArrayList<>();
     titulares = new ArrayList<>();
 

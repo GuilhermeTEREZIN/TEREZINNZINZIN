@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TabelaConfrontos {
 
-    public static void main(String[] args) {
+    public static void gerarLiga() {
         List<String> teams = new ArrayList<>();
         ArrayList<Time> times = new ArrayList<>();
 
@@ -20,7 +20,7 @@ public class TabelaConfrontos {
             teams.add(t.getNome());
         }
 
-        generateAndSaveFixtures(teams, "confrontos.csv");
+        generateAndSaveFixtures(teams, "./PojetoBrasfoot/save/confrontos.csv");
     }
 
     public static void generateAndSaveFixtures(List<String> teams, String filename) {
@@ -31,7 +31,7 @@ public class TabelaConfrontos {
             writer.println("Rodada,Jogo,Time da Casa,Time Visitante");
             writeFixtureTable(writer, fixtureTable);
             writeFixtureTable(writer, reverseFixtureTable(fixtureTable));
-            System.out.println("Tabela de confrontos gerada e salva no arquivo '" + filename + "'.");
+            //System.out.println("Tabela de confrontos gerada e salva no arquivo '" + filename + "'.");
         } catch (IOException e) {
             e.printStackTrace();
         }
