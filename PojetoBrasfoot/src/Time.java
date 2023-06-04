@@ -13,6 +13,7 @@ public class Time {
     this.nome = nome;
     this.id = id;
     jogadores = new ArrayList<>();
+    titulares = new ArrayList<>();
 
   }
 
@@ -32,18 +33,30 @@ public class Time {
     jogadores.add(j);
   }
 
-  public int over(ArrayList<Jogador> jogadores) {
+  public int over(boolean titulares) {
+    ArrayList<Jogador> jogadores = new ArrayList<>();
+    if (titulares){
+      jogadores = this.titulares;
+    }else {
+      jogadores = this.jogadores;
+    }
     int Over = 0;
     int Contador = 0;
     for (Jogador j : jogadores) {
       Over += j.getOverall();
       Contador += 1;
     }
-    return round(Over / Contador);
+    return Integer.valueOf(Over / Contador);
 
   }
 
-  public int overDefesa(ArrayList<Jogador> jogadores) {
+  public int overDefesa(boolean titulares) {
+    ArrayList<Jogador> jogadores = new ArrayList<>();
+    if (titulares){
+      jogadores = this.titulares;
+    }else {
+      jogadores = this.jogadores;
+    }
     int Over = 0;
     int Contador = 0;
     for (Jogador j : jogadores) {
@@ -52,11 +65,17 @@ public class Time {
         Contador += 1;
       }
     }
-    return round(Over / Contador);
+    return Integer.valueOf(Over / Contador);
 
   }
 
-  public int overMeio(ArrayList<Jogador> jogadores) {
+  public int overMeio(boolean titulares) {
+    ArrayList<Jogador> jogadores = new ArrayList<>();
+    if (titulares){
+      jogadores = this.titulares;
+    }else {
+      jogadores = this.jogadores;
+    }
     int Over = 0;
     int Contador = 0;
     for (Jogador j : jogadores) {
@@ -65,9 +84,15 @@ public class Time {
         Contador += 1;
       }
     }
-    return round(Over / Contador);
+    return Integer.valueOf(Over / Contador);
   }
-  public int overAtaque(ArrayList<Jogador> jogadores) {
+  public int overAtaque(boolean titulares) {
+    ArrayList<Jogador> jogadores = new ArrayList<>();
+    if (titulares){
+      jogadores = this.titulares;
+    }else {
+      jogadores = this.jogadores;
+    }
     int Over = 0;
     int Contador = 0;
     for (Jogador j : jogadores) {
@@ -76,13 +101,13 @@ public class Time {
         Contador += 1;
       }
     }
-    return round(Over / Contador);
+    return Integer.valueOf(Over / Contador);
   }
    public int calcularForcaAtaque(){
-      return round((overAtaque(this.titulares)+overMeio(this.titulares))/2);
+      return round((overAtaque(true)+overMeio(true))/2);
    }
    public int calcularForcaDefesa(){
-     return overDefesa(this.titulares);
+     return overDefesa(true);
   }
 
 }
