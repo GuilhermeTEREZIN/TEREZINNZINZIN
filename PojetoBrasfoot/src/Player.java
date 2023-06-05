@@ -1,6 +1,7 @@
 public class Player {
     //nome
     //time
+    //rodada
     //dinheiro
     //temporada
 

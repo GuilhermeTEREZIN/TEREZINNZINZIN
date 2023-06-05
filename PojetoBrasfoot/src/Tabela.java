@@ -1,12 +1,14 @@
 public interface Tabela {
     String getNome();
-    String setNome();
+    void setNome();
     int getPontos();
-    int setPontos();
+    void setPontos();
     int getGolsfeitos();
-    int setGolsfeitos();
+    void setGolsfeitos();
     int getGolssofridos();
-    int setGolssofridos();
+    void setGolssofridos();
+    void setJogos();
+
 
 
 }

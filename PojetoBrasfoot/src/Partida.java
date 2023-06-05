@@ -27,7 +27,7 @@ public class Partida {
         for(int i = inicio;i<=fim;i++) {
             System.out.println(i+"' - ");
             try {
-                TimeUnit.SECONDS.sleep(0);
+                TimeUnit.SECONDS.sleep(1);
             }catch (Exception e){
                 System.out.println(e);
             }
@@ -40,7 +40,7 @@ public class Partida {
             }
         }
     }
-    public static void simularPartida(Time time1, Time time2, boolean prorrogacao){
+    public static void simularPartida(Time time1, Time time2, boolean penalti){
         Random r = new Random();
         int[] gols = new int[2];
         gols[0] = 0;gols[1] = 0;
@@ -63,6 +63,12 @@ public class Partida {
         System.out.println("Fim de Jogo");
         System.out.println("\nResultado final:");
         System.out.println(time1.getNome()+" "+gols[0]+" X "+gols[1]+" "+time2.getNome());
+
+        if (penalti == true){
+
+        }
+
+
     }
 
     private static void chanceGol(Time time1, Time time2,int[] gols,int minuto){
@@ -116,6 +122,8 @@ public class Partida {
         }
 
     }
+    3
+    
 }
 
 
