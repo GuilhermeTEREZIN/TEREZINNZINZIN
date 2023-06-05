@@ -1,8 +1,5 @@
-import java.util.Date;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-import static java.lang.Math.round;
 
 public class Partida {
     //fazer um método privado estatico calcularBonus que tenha como entrada time1 e time2
@@ -19,8 +16,8 @@ public class Partida {
 
 
     //private static int acrescimos: pega um número aleatório de até 100, se esse número for menor q 5(sem acrescimo), se for menor que 15 = 1 min, menor que 30 = 2 min,
-    //menor que 50 = 3 min, menor que 70 = 4 min, menor que 80 = 5 min, menor que 85 = 6, menor que 90 = 7, menor que 93 = 8, menor que 96 = 9, menor que 100 = 10,
-    //retorna o valor de acrescimo
+        //menor que 50 = 3 min, menor que 70 = 4 min, menor que 80 = 5 min, menor que 85 = 6, menor que 90 = 7, menor que 93 = 8, menor que 96 = 9, menor que 100 = 10,
+        //retorna o valor de acrescimo
     private static void simularEtapa(Time time1, Time time2, int gols[],int inicio,int fim,int ChanceJogada){
         Random r = new Random();
         int x = 0;
@@ -64,7 +61,8 @@ public class Partida {
         System.out.println("\nResultado final:");
         System.out.println(time1.getNome()+" "+gols[0]+" X "+gols[1]+" "+time2.getNome());
 
-        if (penalti == true){
+        if (penalti == true && gols[0] == gols[1]){
+            System.out.println("Disputa de Penaltis");
 
         }
 
@@ -122,8 +120,7 @@ public class Partida {
         }
 
     }
-    3
-    
+
 }
 
 

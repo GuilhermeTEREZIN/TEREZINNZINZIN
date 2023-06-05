@@ -144,10 +144,6 @@ public class MenuSwing {
                 String nome = nomeTextField.getText();
                 String genero = (String) generoComboBox.getSelectedItem();
 
-                // Lógica para iniciar o jogo com os dados informados
-                //JOptionPane.showMessageDialog(frame, "Iniciar jogo com nome: " + nome + ", gênero: " + genero);
-
-                // Voltar ao menu principal
                 panel.removeAll();
                 createAndShowGUI();
             }
