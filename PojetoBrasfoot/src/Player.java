@@ -5,6 +5,9 @@ public class Player {
     //dinheiro
     //temporada
 
+    public Player(){
+
+    }
     //gets e sets
     public void iniciarnovoJogo(){
         CopiaCsv.Copiar("save");
@@ -12,6 +15,6 @@ public class Player {
         CopiaCsv.Copiar("Calendario");
         CopiaCsv.Copiar("Liga");
         TabelaConfrontos.gerarLiga();
-        TabelaConfrontos.gerarCopa();
+        //TabelaConfrontos.gerarCopa();
     }
 }
