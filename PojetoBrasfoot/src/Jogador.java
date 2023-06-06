@@ -1,4 +1,4 @@
-public abstract class Jogador {
+public class Jogador {
     private String nome;
     private String pais;
     private int idade;
