@@ -98,9 +98,16 @@ public class TabelaConfrontos {
 
         return schedule;
     }
-    public static void gerarCopa(ArrayList<Time> times) {
-        List<String> teams = new ArrayList<>();
 
+    public static void gerarCopa() {
+        List<String> teams = new ArrayList<>();
+        ArrayList<Time> times = new ArrayList<>();
+        try {
+            times = importarCsv.times();
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
         for (Time t : times) {
             teams.add(t.getNome());
         }
@@ -108,21 +115,34 @@ public class TabelaConfrontos {
         // Embaralhe a lista de times para gerar confrontos aleatórios
         Collections.shuffle(teams);
 
-        List<String> roundOf16 = generateRoundOf16(teams);
+        List<String> preliminaryRound = generatePreliminaryRound(teams);
+        List<String> roundOf16 = generateRoundOf16(teams.subList(8, 20));
         List<String> quarterfinals = generateQuarterfinals(roundOf16);
         List<String> semifinals = generateSemifinals(quarterfinals);
         List<String> finals = generateFinals(semifinals);
         String champion = generateChampion(finals);
 
+        saveFixtureTable(preliminaryRound, "./PojetoBrasfoot/save/preliminaryRound.csv");
         saveFixtureTable(roundOf16, "./PojetoBrasfoot/save/confrontosCopa.csv");
 
         //System.out.println("Tabela de confrontos gerada e salva no arquivo 'confrontos.csv'.");
         //System.out.println("Campeão: " + champion);
     }
 
+    public static List<String> generatePreliminaryRound(List<String> teams) {
+        List<String> preliminaryRound = new ArrayList<>();
+        for (int i = 0; i < 8; i += 2) {
+            String homeTeam = teams.get(i);
+            String awayTeam = teams.get(i + 1);
+            String match = homeTeam + "," + awayTeam;
+            preliminaryRound.add(match);
+        }
+        return preliminaryRound;
+    }
+
     public static List<String> generateRoundOf16(List<String> teams) {
         List<String> roundOf16 = new ArrayList<>();
-        for (int i = 0; i < teams.size(); i += 2) {
+        for (int i = 0; i < 12; i += 2) {
             String homeTeam = teams.get(i);
             String awayTeam = teams.get(i + 1);
             String match = homeTeam + "," + awayTeam;
@@ -184,3 +204,5 @@ public class TabelaConfrontos {
         }
     }
 }
+
+
