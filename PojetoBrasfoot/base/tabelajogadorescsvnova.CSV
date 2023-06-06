@@ -1,0 +1,440 @@
+ID_NOME, IDADE, CLUBE, POSICAO, NUMERO DA CAMISA, OVERALL, NACIONALIDADE
+1, Everson, 34, Atletico-MG, GO, 1, 78, BRA
+2, Mariano, 36, Atletico-MG, LD, 2, 76, BRA
+3, Jemerson, 30, Atletico-MG, ZAG, 3, 78, BRA
+4, Mauricio Lemos, 27, Atletico-MG, ZAG, 34, 75, BRA
+5, Rubens, 21, Atletico-MG, LE, 44, 74, BRA
+6, Battlaglia, 31, Atletico-MG, VOL, 5, 79, ARG
+7, Zaracho, 25, Atletico-MG, MEI, 15, 81, ARG
+8, Hyoran, 29, Atletico-MG, MEI, 20, 77, BRA
+9, Pavon, 27, Atletico-MG, PTD, 9, 79, ARG
+10, Hulk, 36, Atletico-MG, CA, 7, 84, BRA
+11, Paulinho, 22, Atletico-MG, PTE, 10, 80, BRA
+12, Mendes, 24, Atletico-MG, GO, 12, 73, BRA
+13, Dodo, 31, Atletico-MG, LE, 6, 75, BRA
+14, Savaria, 26, Atletico-MG, LD, 14, 76, ARG
+15, Bruno Fuchs, 24, Atletico-MG, ZAG, 35, 75, BRA
+16, Edenilson, 35, Atletico-MG, MLG, 8, 77, BRA
+17, Igor Gomes, 26, Atletico-MG, MEI, 26, 76, BRA
+18, Patrick, 33, Atletico-MG, MEI, 49, 77, BRA
+19, Rever, 36, Atletico-MG, ZAG, 4, 74, BRA
+20, Cadu, 18, Atletico-MG, CA, 77, 70, BRA
+21, Guilherme Arana, 26, Atletico-MG, LE, 13, 81, BRA
+22, Eduardo Vargas, 35, Atletico-MG, CA, 17, 78, CHI
+23, Bento, 23, Athletico-PR, GO, 1, 80, BRA
+24, Thiago Heleno, 34, Athletico-PR, ZAG, 44, 77, BRA
+25, Pedro Henrique, 27, Athletico-PR, ZAG, 34, 75, BRA
+26, Khellven, 22, Athletico-PR, LD, 13, 76, BRA
+27, Fernando, 23, Athletico-PR, LE, 6, 74, BRA
+28, Fernandinho, 38, Athletico-PR, VOL, 5, 82, BRA
+29, Erick, 25, Athletico-PR, MLG, 26, 75, BRA
+30, Vitor Bueno, 28, Athletico-PR, MEI, 8, 77, BRA
+31, David Terans, 28, Athletico-PR, MEI, 10, 80, URU
+32, Canobbio, 24, Athletico-PR, PTD, 14, 78, URU
+33, Vitor Roque, 18, Athletico-PR, CA, 9, 80, BRA
+34, Leo Link, 22, Athletico-PR, GO, 12, 71, BRA
+35, Ze Ivaldo, 26, Athletico-PR, ZAG, 3, 74, BRA
+36, Hugo Moura, 25, Athletico-PR, VOL, 17, 75, BRA
+37, Christian, 22, Athletico-PR, MLG, 88, 76, BRA
+38, Alex Santana, 28, Athletico-PR, MLG, 80, 77, BRA
+39, Arthur Zanella, 18, Athletico-PR, LE, 97, 69, BRA
+40, Willian, 36, Athletico-PR, CA, 11, 77, BRA
+41, Cuello, 23, Athletico-PR, PTE, 28, 75, ARG
+42, Thiago Andrade, 22, Athletico-PR, PTE, 19, 76, BRA
+43, Pablo, 30, Athletico-PR, CA, 92, 76, BRA
+44, Madson, 31, Athletico-PR, LD, 2, 74, BRA
+45, Cavichioli, 36, America-MG, GO, 1, 76, BRA
+46, Nino Paraiba, 34, America-MG, LD, 2, 76, BRA
+47, Eder Ferreira, 27, America-MG, ZAG, 3, 75, BRA
+48, Maidana, 26, America-MG, ZAG, 4, 75, BRA
+49, Ze Ricardo, 25, America-MG, VOL, 5, 74, BRA
+50, Lucas Luan, 23, America-MG, LE, 6, 74, BRA
+51, Ale, 32, America-MG, MEI, 7, 75, BRA
+52, Juninho, 35, America-MG, MLG, 8, 75, BRA
+53, Aloisio, 35, America-MG, CA, 9, 77, BRA
+54, Benitez, 28, America-MG, MEI, 10, 78, ARG
+55, Everaldo, 28, America-MG, PTE, 11, 76, BRA
+56, Jori, 26, America-MG, GO, 12, 74, BRA
+57, Avelar, 33, America-MG, LE, 13, 75, BRA
+58, Thalys, 22, America-MG, LD, 14, 71, BRA
+59, Wanderson, 30, America-MG, ZAG, 15, 72, BRA
+60, Rodolfo, 21, America-MG, ZAG, 16, 73, BRA
+61, Matheusinho, 24, America-MG, MEI, 17, 76, BRA
+62, Felipe Azevedo, 36, America-MG, PTE, 18, 75, BRA
+63, Dada Belmonte, 24, America-MG, MLG, 19, 74, BRA
+64, Mastriani, 30, America-MG, CA, 20, 77, URU
+65, Wellington Paulista, 36, America-MG, CA, 21, 77, BRA
+66, E. Martinez, 28, America-MG, CA, 22, 76, ARG
+67, M. Teixeira, 23, Bahia, GO, 1, 74, BRA
+68, M. Claus, 28, Bahia, GO, 12, 73, BRA
+69, Raul Gustavo, 23, Bahia, ZAG, 3, 75, BRA
+70, Kanu, 25, Bahia, ZAG, 4, 77, BRA
+71, M. Bahia, 22, Bahia, LE, 5, 74, BRA
+72, Andre, 19, Bahia, LD, 6, 73, BRA
+73, Douglas Borel, 20, Bahia, LD, 13, 72, BRA
+74, Miqueias, 22, Bahia, VOL, 8, 74, BRA
+75, Everaldo, 33, Bahia, CA, 9, 77, BRA
+76, Lucas Mugni, 31, Bahia, MEI, 10, 76, ARG
+77, Biel, 22, Bahia, PTE, 11, 77, BRA
+78, Kayky, 21, Bahia, PTD, 12, 75, BRA
+79, David Duarte, 26, Bahia, ZAG, 2, 73, BRA
+80, Rezende, 27, Bahia, MLG, 14, 75, BRA
+81, Daniel, 26, Bahia, MLG, 15, 75, BRA
+82, Marco Antonio, 24, Bahia, MEI, 16, 76, BRA
+83, Ricardo Goulart, 33, Bahia, MEI, 17, 78, BRA
+84, Vitor Jacare, 25, Bahia, PTE, 18, 76, BRA
+85, Cauly, 26, Bahia, PTD, 19, 75, BRA
+86, Caio Vidal, 24, Bahia, PTD, 20, 73, BRA
+87, Verhon, 20, Bahia, MEI, 21, 70, BRA
+88, Macedo, 22, Bahia, CA, 22, 71, BRA
+89, Gatito, 34, Botafogo, GO, 1, 79, PAR
+90, Perri, 25, Botafogo, GO, 12, 76, BRA
+91, Adryelson, 24, Botafogo, ZAG, 3, 75, BRA
+92, Victor Cuesta, 34, Botafogo, ZAG, 15, 78, ARG
+93, Hugo, 21, Botafogo, LE, 6, 73, BRA
+94, Carlinhos, 36, Botafogo, LE, 16, 74, BRA
+95, Patrick De Paula, 23, Botafogo, VOL, 5, 77, BRA
+96, Gabriel Pires, 29, Botafogo, MLG, 8, 79, BRA
+97, Tiquinho Soares, 31, Botafogo, CA, 9, 80, BRA
+98, Carlos Eduardo, 33, Botafogo, MEI, 10, 81, BRA
+99, Luis Henrique, 21, Botafogo, PTE, 11, 76, BRA
+100, Rafael, 32, Botafogo, LD, 2, 77, BRA
+101, Marcal, 33, Botafogo, LE, 13, 78, BRA
+102, Carli, 36, Botafogo, ZAG, 14, 74, ARG
+103, Segovia, 24, Botafogo, ZAG, 4, 73, EQU
+104, P. Sampaio, 28, Botafogo, ZAG, 16, 75, BRA
+105, Tche Tche, 30, Botafogo, MLG, 17, 76, BRA
+106, Danilo Barbosa, 26, Botafogo, VOL, 18, 77, BRA
+107, Lucas Fernandes, 25, Botafogo, MEI, 19, 76, BRA
+108, Victor Sa, 27, Botafogo, PTE, 20, 77, BRA
+109, G. Sauer, 27, Botafogo, PTD, 21, 76, BRA
+110, Matheus Nascimento, 18, Botafogo, CA, 22, 74, BRA
+111, Donelli, 22, Corinthians, GO, 1, 72, BRA
+112, Fagner, 34, Corinthians, LD, 23, 78, BRA
+113, Bruno Mendez, 25, Corinthians, ZAG, 3, 77, URU
+114, Balbuena, 33, Corinthians, ZAG, 4, 79, PAR
+115, Fausto Vera, 24, Corinthians, VOL, 5, 78, ARG
+116, Fabio Santos, 39, Corinthians, LE, 26, 77, BRA
+117, Maycon, 27, Corinthians, MLG, 7, 78, BRA
+118, Paulinho, 35, Corinthians, MLG, 8, 82, BRA
+119, Yuri Alberto, 23, Corinthians, CA, 9, 80, BRA
+120, Roger Guedes, 28, Corinthians, CA, 10, 81, BRA
+121, Romero, 32, Corinthians, PTE, 11, 77, PAR
+122. Cassio, 37, Corinthians, GO, 12, 82, BRA.
+123, Caetano, 25, Corinthians, ZAG, 13, 71, BRA
+124, Gil, 37, Corinthians, ZAG, 14, 76, BRA
+125, Bidu, 25, Corinthians, LE, 15, 75, BRA
+126, Rafael Ramos, 30, Corinthians, LD, 16, 75, BRA
+127, Renato Augusto, 34, Corinthians, MEI, 17, 83, BRA
+128, Giuliano, 34, Corinthians, MEI, 18, 79, BRA
+129, Luan, 29, Corinthians, MEI, 19, 75, BRA
+130, Adson, 22, Corinthians, PTD, 20, 78, BRA
+131, Giovani, 20, Corinthians, PTE, 21, 76, BRA
+132, Junior Moraes, 35, Corinthians, CA, 88, 78, BRA
+133, Gabriel, 30, Coritiba, GO, 1, 77, BRA
+134, Trindade, 28, Coritiba, LD, 2, 75, URU
+135, Henrique, 34, Coritiba, ZAG, 3, 75, BRA
+136, Chancellor, 30, Coritiba, ZAG, 4, 77, VEN
+137, Liziero, 25, Coritiba, VOL, 5, 76, BRA
+138, Victor Luis, 29, Coritiba, LE, 6, 76, BRA
+139, Andrey, 24, Coritiba, VOL, 7, 74, BRA
+140, Marcelino Moreno, 27, Coritiba, MEI, 8, 76, ARG
+141, Rodrigo Pinho, 30, Coritiba, CA, 9, 76, BRA
+142, Boschilia, 26, Coritiba, MEI, 10, 77, BRA
+143, Alef Manga, 27, Coritiba, CA, 11, 79, BRA
+144, Marcao, 22, Coritiba, GO, 12, 70, BRA
+145, Thallisson, 21, Coritiba, ZAG, 13, 72, BRA
+146, Marcio, 21, Coritiba, ZAG, 14, 72, BRA
+147, Porfirio, 22, Coritiba, LE, 15, 72, BRA
+148, Bruno Gomes, 21, Coritiba, VOL, 16, 75, BRA
+149, Robson, 31, Coritiba, PTE, 17, 76, BRA
+150, Junior Urso, 31, Coritiba, VOL, 18, 77, BRA
+151, Regis, 28, Coritiba, MEI, 19, 75, BRA
+152, Warley, 22, Coritiba, PTD, 20, 74, BRA
+153, Pottker, 29, Coritiba, PTE, 21, 75, BRA
+154, W. Alves, 32, Coritiba, CA, 22, 73, BRA
+155, Rafael, 32, Cruzeiro, GO, 1, 76, BRA
+156, Willian, 26, Cruzeiro, LD, 2, 76, BRA
+157, Brock, 31, Cruzeiro, ZAG, 3, 74, B
+158, Oliveira, 26, Cruzeiro, ZAG, 4, 74, BRA
+159, Neto Moura, 25, Cruzeiro, VOL, 5, 75, BRA
+160, Cipriano, 22, Cruzeiro, LE, 6, 75, BRA
+161, Joao Paulo, 32, Cruzeiro, MEI, 7, 76, BRA
+162, Ramiro, 29, Cruzeiro, VOL, 8, 77, BRA
+163, Gilberto, 32, Cruzeiro, CA, 9, 79, BRA
+164, Nikao, 30, Cruzeiro, MEI, 10, 77, BRA
+165, Stenio, 19, Cruzeiro, PTE, 11, 76, BRA
+166, Anderson, 24, Cruzeiro, GO, 12, 72, BRA
+167, Neris, 30, Cruzeiro, ZAG, 13, 72, BRA
+168, Weverton, 21, Cruzeiro, ZAG, 14, 72, BRA
+169, Gasolina, 22, Cruzeiro, LD, 15, 74, BRA
+170, Kaiki, 20, Cruzeiro, LE, 16, 73, BRA
+171, Machado, 26, Cruzeiro, MLG, 17, 74, BRA
+172, Wallisson, 23, Cruzeiro, MEI, 18, 76, BRA
+173, Bruno Rodrigues, 25, Cruzeiro, PTE, 19, 78, BRA
+174, Davo, 23, Cruzeiro, CA, 20, 74, BRA
+175, Henrique Dourado, 33, Cruzeiro, CA, 21, 77, BRA
+176, Wesley, 23, Cruzeiro, PTE, 22, 75, BRA
+177, Walter, 34, Cuiaba, GO, 1, 78, BRA
+178, Mateusinho, 24, Cuiaba, LD, 2, 74, BRA
+179, Empereur, 28, Cuiaba, ZAG, 3, 75, BRA
+180, Marllon, 29, Cuiaba, ZAG, 4, 76, BRA
+181, Sobral, 28, Cuiaba, VOL, 5, 77, BRA
+182, Uendel, 34, Cuiaba, LE, 6, 74, BRA
+183, Rafael Gava, 28, Cuiaba, MEI, 7, 75, BRA
+184, Ceppelini, 29, Cuiaba, MEI, 8, 77, URU
+185, Deyverson, 32, Cuiaba, CA, 9, 76, BRA
+186, Rodriguinho, 34, Cuiaba, MEI, 10, 78, BRA
+187, Jonathan Cafu, 30, Cuiaba, PTD, 11, 76, BRA
+188, J. Carlos, 34, Cuiaba, GO, 12, 74, BRA
+189, Julio, 23, Cuiaba, ZAG, 13, 69, BRA
+190, Sidcley, 28, Cuiaba, LE
+191. M. Alexandre, 23, Cuiaba, LD, 15, 73, BRA.
+192. V. Barreta, 23, Cuiaba, GO, 16, 72, BRA.
+193. Wellington Silva, 30, Cuiaba, PTD, 17, 76, BRA.
+194. Castilho, 26, Cuiaba, CA, 18, 72, BRA.
+195. Denilson, 20, Cuiaba, MEI, 19, 73, BRA.
+196. Thiaguinho, 21, Cuiaba, CA, 20, 71, BRA.
+197. Rikelmi, 19, Cuiaba, PTD, 21, 72, BRA.
+198. Pitta, 23, Cuiaba, CA, 22, 76, PAR.
+199. Santos, 34, Flamengo, GO, 1, 78, BRA.
+200. Varela, 29, Flamengo, LD, 2, 77, URU.
+201. Rodrigo Caio, 30, Flamengo, ZAG, 3, 80, BRA.
+202. Leo Pereira, 27, Flamengo, ZAG, 4, 80, BRA.
+203. Pulgar, 30, Flamengo, VOL, 5, 77, CHI.
+204. Ayrton Lucas, 26, Flamengo, LE, 6, 80, BRA.
+205. Everton Ribeiro, 34, Flamengo, MEI, 7, 81, BRA.
+206. Gerson, 27, Flamengo, VOL, 8, 80, BRA.
+207. Pedro, 27, Flamengo, CA, 9, 83, BRA.
+208. Gabi, 28, Flamengo, CA, 10, 82, BRA.
+209. Cebolinha, 27, Flamengo, PTE, 11, 81, BRA.
+210. Rossi, 27, Flamengo, GO, 12, 79, ARG.
+211. Matheusinho, 22, Flamengo, LD, 34, 78, BRA.
+212. Arrascaeta, 28, Flamengo, MEI, 14, 85, URU.
+213. Fabricio Bruno, 28, Flamengo, ZAG, 15, 78, BRA.
+214. Filipe Luis, 38, Flamengo, LE, 16, 77, BRA.
+215. Vidal, 36, Flamengo, VOL, 32, 80, CHI.
+216. Matheus Franca, 19, Flamengo, MEI, 42, 76, BRA.
+217. Victor Hugo, 18, Flamengo, MEI, 29, 76, BRA.
+218. Luiz Araujo, 25, Flamengo, PTD, 77, 79, BRA.
+219. Bruno Henrique, 33, Flamengo, PTE, 27, 79, BRA.
+220. Marinho, 32, Flamengo, PTD, 31, 77, BRA.
+221. Fabio, 41, Fluminense, GO, 1, 80, BRA.
+222. Samuel Xavier, 32, Fluminense, LD, 2, 77, BRA.
+223. Nino, 25, Fluminense, ZAG, 33, 81, BRA.
+224. Manoel, 33, Fluminense, ZAG, 26, 76, BRA.
+225. Felipe Melo, 38, Fluminense, VOL, 30, 75, BRA.
+226. Cris Silva, 29, Fluminense, LE, 6, 76, BRA.
+227. Andre, 21, Fluminense, VOL, 7, 82, BRA.
+228. Arias, 25, Fluminense, MEI, 8, 81, COL.
+229. Cano, 34, Fluminense, CA, 14, 84, ARG.
+230. PH Ganso, 34, Fluminense, MEI, 10, 79, BRA.
+231. Keno, 32, Fluminense, PTE, 11, 80, BRA.
+232. Vitor Eudes, 21, Fluminense, GO, 12, 74, BRA.
+233. Guga, 23, Fluminense, LD, 23, 75, BRA.
+234. Calegari, 20, Fluminense, LD, 34, 75, BRA.
+235. Martinelli, 20, Fluminense, VOL, 35, 78, BRA.
+236. Jorge, 25, Fluminense, LE, 16, 77, BRA.
+237. Lima, 25, Fluminense, MEI, 17, 79, BRA.
+238. JoaoPedro, 23, Fluminense, MEI, 18, 76, BRA.
+239. Ariel Suarez, 19, Fluminense, PTD, 19, 75, EQU.
+240. Carvalho, 33, Fluminense, CA, 20, 77, BRA.
+241. Michel Araujo, 26, Fluminense, PTE, 21, 77, URU.
+242. Marrony, 24, Fluminense, PTD, 77, 77, BRA.
+243. Fernando Miguel, 38, Fortaleza, GO, 1, 78, BRA.
+244. Dudu, 24, Fortaleza, LD, 2, 76, BRA.
+245. M. Benevenuto, 26, Fortaleza, ZAG, 3, 78, BRA.
+246. Britez, 30, Fortaleza, ZAG, 4, 77, ARG.
+247. Hercules, 20, Fortaleza, VOL, 5, 78, BRA.
+248. Bruno Pacheco, 30, Fortaleza, LE, 6, 77, BRA.
+249. Moises, 26, Fortaleza, CA, 7, 77, BRA.
+250. Romarinho, 28, Fortaleza, CA, 8, 77, BRA.
+251. S. Romero, 33, Fortaleza, CA, 9, 78, ARG.
+252. Crispim, 27, Fortaleza, MEI, 10, 78, BRA.
+253. Pikachu, 30, Fortaleza, MEI, 22, 79, BRA.
+254. Joao Ricardo, 32, Fortaleza, GO, 12, 76, BRA.
+255. Titi, 35, Fortaleza, ZAG, 13, 77, BRA.
+256. Lucas Esteves, 22, Fortaleza, LE, 14, 75, BRA.
+257. Tinga, 28, Fortaleza, LD, 15, 75, BRA.
+258. B. Ceballos, 21, Fortaleza, ZAG, 16, 76, COL.
+259. Thiago Galhardo, 33, Fortaleza, MEI, 17, 78, BRA.
+260. Ronald, 25, Fortaleza, VOL, 18, 75, BRA.
+261. T. Pochettino, 26, Fortaleza, MLG, 19, 77, ARG.
+262. Pedro Rocha, 32, Fortaleza, PTE, 20, 78, BRA.
+263. Lucero, 31, Fortaleza, CA, 21, 77, ARG.
+264. Riquelmo, 22, Fortaleza, CA, 23, 74, BRA.
+265. Tadeu, 29, Goias, GO, 1, 79, BRA.
+266. Apodi, 36, Goias, LD, 2, 77, BRA.
+267. Lucas Halter, 22, Goias, ZAG, 3, 76, BRA.
+268. Sidimar, 30, Goias, ZAG, 4, 74, BRA.
+269. Nathan, 21, Goias, VOL, 5, 73, BRA.
+270. Bruno Melo, 30, Goias, LE, 6, 74, BRA.
+271. Dieguinho, 26, Goias, MEI, 7, 75, BRA.
+272. J. Palacios, 23, Goias, MLG, 8, 77, ARG.
+273. Nicolas, 33, Goias, CA, 9, 78, BRA.
+274. Marquinhos Gabriel, 32, Goias, MEI, 10, 77, BRA.
+275. Alesson, 22, Goias, PTE, 11, 76, BRA.
+276. Rangel, 34, Goias, GO, 12, 74, BRA.
+277. Sander, 32, Goias, LE, 13, 75, BRA.
+278. Edu, 21, Goias, ZAG, 14, 74, BRA.
+279. Da Silva, 22, Goias, ZAG, 15, 73, BRA.
+280. Maguinho, 31, Goias, LD, 16, 74, BRA.
+281. W. Oliveira, 28, Goias, VOL, 17, 75, BRA.
+282. Leo Sena, 27, Goias, MEI, 18, 77, BRA.
+283. Fellipe Bastos, 33, Goias, MLG, 19, 76, BRA.
+284. Breno Herculano, 24, Goias, CA, 20, 74, BRA.
+285. Luis Felipe, 21, Goias, CA, 21, 73, BRA.
+286. Vinicius, 28, Goias, CA, 22, 74, BRA.
+287. Grando, 21, Gremio, GO, 1, 78, BRA.
+288. Fabio, 32, Gremio, LD, 2, 77, BRA.
+289. Geromel, 37, Gremio, ZAG, 3, 78, BRA.
+290. Kannemann, 32, Gremio, ZAG, 4, 80, ARG.
+291. Carballo, 25, Gremio, VOL, 5, 79, URU.
+292. Reinaldo, 33, Gremio, LE, 6, 77, BRA.
+293. Cristaldo, 26, Gremio, MLG, 7, 79, ARG.
+294. Villasanti, 25, Gremio, MEI, 8, 78, PAR.
+295. Suarez, 35, Gremio, CA, 9, 86, URU.
+296. Ferreirinha, 23, Gremio, PTE, 10, 79, BRA.
+297. Pepe, 23, Gremio, MEI, 11, 78, BRA.
+298. Brenno, 23, Gremio, GO, 12, 75, BRA.
+299. Joao Pedro, 26, Gremio, LD, 13, 76, BRA.
+300. Bruno Uvini, 31, Gremio, ZAG, 14, 76, BRA.
+301. Bruno Alvez, 31, Gremio, ZAG, 15, 76, BRA.
+302. D. Barbosa, 30, Gremio, LE, 16, 77, BRA.
+303. Lucas Silva, 29, Gremio, MLG, 17, 78, BRA.
+304. Galdino, 25, Gremio, MEI, 18, 74, BRA.
+305. Bitelo, 23, Gremio, PTE, 19, 79, BRA.
+306. Campaz, 22, Gremio, PTD, 20, 77, COL.
+307. Jhonata Robert, 23, Gremio, PTD, 21, 74, BRA.
+308. Diego Souza, 37, Gremio, CA, 77, 77, BRA.
+309. Keiller, 26, Internacional, GO, 1, 78, BRA
+310. Bustos, 26, Internacional, LD, 2, 81, ARG.
+311. Moledo, 35, Internacional, ZAG, 3, 76, BRA.
+312. Vitao, 22, Internacional, ZAG, 4, 77, BRA.
+313. Gabriel, 29, Internacional, VOL, 5, 76, BRA.
+314. Rene, 30, Internacional, LE, 6, 77, BRA.
+315. Mauricio, 21, Internacional, MEI, 7, 79, BRA.
+316. De Pena, 30, Internacional, PTE, 8, 78, URU.
+317. Alemao, 24, Internacional, CA, 9, 77, ARG.
+318. Alan Patrick, 31, Internacional, MEI, 10, 82, BRA.
+319. Pedro Henrique, 32, Internacional, PTD, 11, 79, BRA.
+320. John, 26, Internacional, GO, 12, 75, BRA.
+321. Thauan, 19, Internacional, LE, 13, 75, BRA.
+322. Mercado, 36, Internacional, ZAG, 14, 77, ARG.
+323. Igor Gomes, 22, Internacional, ZAG, 15, 74, BRA.
+324. M. Fernandes, 32, Internacional, LD, 16, 77, RUS.
+325. Baralhas, 23, Internacional, VOL, 17, 76, BRA.
+326. Lucas Ramos, 22, Internacional, MLG, 18, 74, BRA.
+327. Johnny, 21, Internacional, MEI, 19, 79, BRA.
+328. Wanderson, 28, Internacional, PTD, 20, 80, BRA.
+329. Estevao, 21, Internacional, PTD, 21, 73, BRA.
+330. Weverton, 34, Palmeiras, GO, 1, 83, BRA.
+331. Marcos Rocha, 34, Palmeiras, LD, 2, 79, BRA.
+332. Gustavo Gomez, 28, Palmeiras, ZAG, 15, 83, PAR.
+333. Murilo, 25, Palmeiras, ZAG, 26, 80, BRA.
+334. Richard Rios, 22, Palmeiras, VOL, 5, 77, COL.
+335. Piquerez, 22, Palmeiras, LE, 6, 81, URU.
+336. Dudu, 30, Palmeiras, PTD, 7, 84, BRA.
+337. Ze Rafael, 29, Palmeiras, MLG, 8, 79, BRA.
+338. Rony, 27, Palmeiras, CA, 9, 78, BRA.
+339. Raphael Veiga, 27, Palmeiras, MEI, 10, 83, BRA.
+340. Endrick, 17, Palmeiras, CA, 11, 76, BRA.
+341. Lomba, 36, Palmeiras, GO, 12, 76, BRA.
+342. Mayke, 30, Palmeiras, LD, 13, 76, BRA.
+343. Luan, 29, Palmeiras, ZAG, 14, 77, BRA.
+344. Kuscevic, 26, Palmeiras, ZAG, 3, 75, CHI.
+345. Vanderlan, 20, Palmeiras, LE, 4, 73, BRA.
+346. Atuesta, 25, Palmeiras, VOL, 17, 77, COL.
+347. Gabriel Menino, 22, Palmeiras, MLG, 25, 78, BRA.
+348. Luis Guilherme, 18, Palmeiras, MEI, 18, 70, BRA.
+349. Tabata, 25, Palmeiras, PTE, 19, 76, BRA.
+350. Flaco Lopez, 22, Palmeiras, CA, 20, 77, ARG.
+351. Giovani, 19, Palmeiras, PTD, 21, 72, BRA.
+352. Cleiton, 25, RB Bragantino, GO, 1, 79, BRA.
+353. Aderlan, 31, RB Bragantino, LD, 2, 77, BRA.
+354. Natan, 21, RB Bragantino, ZAG, 3, 75, BRA.
+355. Leo Ortiz, 25, RB Bragantino, ZAG, 4, 79, BRA.
+356. Raul, 25, RB Bragantino, VOL, 5, 77, BRA.
+357. Luan Candido, 25, RB Bragantino, LE, 6, 79, BRA.
+358. Praxedes, 20, RB Bragantino, MLG, 7, 77, BRA.
+359. Ramires, 21, RB Bragantino, MLG, 8, 76, BRA.
+360. Alerrandro, 21, RB Bragantino, CA, 9, 77, BRA.
+361. Bruninho, 20, RB Bragantino, CA, 10, 76, BRA.
+362. Helinho, 22, RB Bragantino, PTE, 11, 77, BRA.
+363. Lucao, 21, RB Bragantino, GO, 12, 74, BRA.
+364. Hurtado, 21, RB Bragantino, LD, 13, 74, EQU.
+365. Realpe, 21, RB Bragantino, ZAG, 14, 75, EQU.
+366. Luan Patrick, 20, RB Bragantino, ZAG, 15, 72, BRA.
+367. Juninho Capixaba, 25, RB Bragantino, LE, 26, 79, BRA.
+368. Camargo, 17, RB Bragantino, VOL, 16, 70, BRA.
+369. Lucas Evangelista, 27, RB Bragantino, MLG, 17, 78, BRA.
+370. Jadsom, 21, RB Bragantino, MLG, 18, 75, BRA.
+371. Wellinton, 22, RB Bragantino, PTD, 19, 71, BRA.
+372. Sorriso, 22, RB Bragantino, PTD, 20, 75, BRA.
+373. Popo, 20, RB Bragantino, CA, 21, 73, BRA.
+374. Joao Paulo, 28, Santos, GO, 1, 81, BRA.
+375. Nathan, 23, Santos, LD, 2, 76, BRA.
+376. Maicon, 35, Santos, ZAG, 3, 77, BRA.
+377. Bauermann, 28, Santos, ZAG, 4, 77, BRA.
+378. Fernandez, 28, Santos, VOL, 5, 79, URU.
+379. Felipe Jonatan, 26, Santos, LE, 6, 76, BRA.
+380. Soteldo, 26, Santos, PTE, 10, 81, VEN.
+381. Dodi, 27, Santos, MLG, 7, 78, BRA.
+382. Marcos Leonardo, 20, Santos, CA, 9, 80, BRA.
+383. Lucas Lima, 28, Santos, MEI, 8, 77, BRA.
+384. Angelo, 18, Santos, PTD, 11, 79, BRA.
+385. Vladimir, 35, Santos, GO, 12, 75, BRA.
+386. Joao Lucas, 25, Santos, LD, 13, 74, BRA.
+387. Messias, 29, Santos, ZAG, 14, 76, BRA.
+388. Joaquin, 24, Santos, ZAG, 15, 74, BRA.
+389. Lucas Pires, 23, Santos, LE, 16, 75, BRA.
+390. Ivonei, 20, Santos, MEI, 17, 76, BRA.
+391. Camacho, 33, Santos, MLG, 18, 75, BRA.
+392. Sandry, 20, Santos, VOL, 19, 74, BRA.
+393. Mendoza, 30, Santos, PTE, 20, 78, COL.
+394. Lucas Braga, 26, Santos. PTD, 21, 76, BRA.
+395. Patati, 19, Santos, PTD, 22, 73, BRA.
+396. Rafael, 33, Sao Paulo, GO, 1, 77, BRA.
+397. Rafinha, 36, Sao Paulo, LD, 2, 78, BRA.
+398. Diego Costa, 23, Sao Paulo, ZAG, 3, 78, BRA.
+399. Arboleda, 30, Sao Paulo, ZAG, 4, 80, EQU.
+400. Gabriel Neves, 23, Sao Paulo, 5, 78, URU.
+401. Welington, 22, Sao Paulo, LE, 6, 77, BRA.
+402. Galoppo, 23, Sao Paulo, MEI, 7, 80, ARG.
+403. Rodrigo Nestor, 23, Sao Paulo, MLG, 8, 76, BRA.
+404. Calleri, 30, Sao Paulo, CA, 9, 82, ARG.
+405. Wellinton Rato, 28, Sao Paulo, PTD, 10, 78, BRA.
+406. Marcos Paulo, 22, Sao Paulo, CA, 11, 78, BRA.
+407. Jandrei, 28, Sao Paulo, GO, 12, 74, BRA.
+408. Joao Moreira, 19, Sao Paulo, LD, 13, 73, POR.
+409. Alan Franco, 25, Sao Paulo, ZAG, 14, 78, ARG.
+410. N. Ferraresi, 24, Sao Paulo, ZAG, 15, 77, VEN.
+411. P. Lanza, 18, Sao Paulo, LE, 16, 72, BRA.
+412. Pablo Maia, 22, Sao Paulo, VOL, 17, 75, BRA.
+413. Andre Anderson, 22, Sao Paulo, MEI, 18, 76, ITA.
+414. J. Mendez, 26, Sao Paulo, MLG, 19, 77, EQU.
+415. Luciano, 30, Sao Paulo, CA, 20, 78, BRA.
+416. Erison, 24, Sao Paulo, CA, 21, 76, BRA.
+417. Alisson, 27, Sao Paulo, PTE, 22, 77, BRA.
+418. Ivan, 23, Vasco, GO, 1, 76, BRA.
+419. Puma Rodriguez, 23, Vasco, LD, 2, 77, URU.
+420. Capasso, 25, Vasco, ZAG, 3, 76, ARG.
+421. Leo Pele, 25, Vasco, ZAG, 4, 75, BRA.
+422. Ze Gabriel, 23, Vasco, VOL, 5, 76, BRA.
+423. Lucas Piton, 21, Vasco, LE, 6, 75, BRA.
+424. Matias Galarza, 20, Vasco, MEI, 7, 75, PAR.
+425. Jair, 28, Vasco, MLG, 8, 78, BRA.
+426. Pedro Raul, 26, Vasco, CA, 9, 80, BRA.
+427. Alex Teixeira, 32, Vasco, CA, 10, 79, BRA.
+428. Lucas Orellano, 22, Vasco, PTD, 11, 78, ARG.
+429. Leo Jardim, 26, Vasco, GO, 12, 74, BRA.
+430. Gabriel Dias, 27, Vasco, LD, 13, 75, BRA.
+431. Robson Bambu, 24, Vasco, ZAG, 14, 74, BRA.
+432. Ulisses, 22, Vasco, ZAG, 15, 72, BRA.
+433. Edimar, 34, Vasco, LE, 16, 73, BRA.
+434. Weverton, 23, Vasco, VOL, 17, 72, BRA.
+435. Marlon Gomes, 20, Vasco, 18, 77, BRA.
+436. Laranjeira, 23, Vasco, MEI, 19, 75, BRA.
+437.Gabriel Pec, 21, Vasco, PTD, 20, 77, BRA.
+438. Erick, 26, Vasco, PTE, 21, 74, BRA.
+439. Vini Paiva, 21, Vasco, PTD, 22, 74, BRA.
