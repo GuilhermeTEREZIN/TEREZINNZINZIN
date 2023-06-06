@@ -6,4 +6,8 @@ public class Player {
     //temporada
 
     //gets e sets
+    public void iniciarnovoJogo(){
+        CopiaCsv.Copiar("save");
+        CopiaCsv.Copiar("Calendario");
+    }
 }
