@@ -3,12 +3,12 @@ public class Jogador {
     private String nome;
     private String pais;
     private int idade;
-    private Posicao posicao;
+    private String posicao;
     private int overall;
     private int numero;
     private String clube;
 
-    public Jogador(int id,String nome, String pais, int idade, Posicao posicao,int overall, int numero,String clube){
+    public Jogador(int id,String nome, String pais, int idade, String posicao,int overall, int numero,String clube){
         this.id = id;
         this.nome = nome;
         this.idade = idade;
@@ -43,11 +43,11 @@ public class Jogador {
         this.idade = idade;
     }
 
-    public Posicao getPosicao() {
+    public String getPosicao() {
         return posicao;
     }
 
-    public void setPosicao(Posicao posicao) {
+    public void setPosicao(String posicao) {
         this.posicao = posicao;
     }
 

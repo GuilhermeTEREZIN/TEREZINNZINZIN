@@ -8,6 +8,7 @@ public class Main {
         Player j =new Player();
 //        j.iniciarnovoJogo();
 
+
 //        Menu.menu();
 //        Partida.simularPartida(new Time(1,"santos"),new Time(2,"flamengo"),false);
 //        try {

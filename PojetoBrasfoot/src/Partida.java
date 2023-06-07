@@ -1,20 +1,23 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Partida {
     private static int calcularBonus(Time Time1, Time Time2) {
         int diferenca = Time1.calcularForcaAtaque() - Time2.calcularForcaDefesa();
+//        int diferenca = 7;
         if (diferenca > 0) {
             return diferenca / 2;
         } else {
             return 0;
         }
     }
-
+//    randomJogador(titulares)
+//    random 0-100
+    // if <60
     private static void placar(Time time1, Time time2,int[] gols) {
         System.out.println(ConsoleColors.BLUE+time1.getNome()+" "+gols[0]+" X "+gols[1]+" "+time2.getNome()+ConsoleColors.RESET);
     }
-
 
 
 //        public static void mostrarMensagens(Time time, int minuto) {
@@ -26,11 +29,11 @@ public class Partida {
 //                System.out.println(minuto + "' - Gol do " + time.getNome() + " - No finalzinho do primeiro tempo!");
 //            } else {
 //                System.out.println(minuto + "' - Gol do " + time.getNome() + " - Uma paulada de fora da área!");
-//            } else {
+//
 //                System.out.println(minuto + "' - Gol do " + time.getNome() + " - Golaço de cabeça!");
-//            } else {
+//
 //                System.out.println(minuto + "' - Gol do " + time.getNome() + " - Uma linda cobrança de falta!");
-//            } else {
+//
 //                System.out.println(minuto + "' - Gol do " + time.getNome() + " - De pênalti no cantinho!");
 //            }
 
@@ -81,7 +84,7 @@ public class Partida {
 
         System.out.println("Fim de Jogo");
         System.out.println("\nResultado final:");
-        System.out.println(time1.getNome()+" "+gols[0]+" X "+gols[1]+" "+time2.getNome());
+        placar(time1,time2,gols);
 
         if (penalti == true && gols[0] == gols[1]){
             System.out.println("Disputa de Penaltis");
@@ -96,8 +99,8 @@ public class Partida {
         int chance;
         int t1 = 0;
         int t2 = 0;
-        t1 = r.nextInt(80);
-        t2 = r.nextInt(80);
+        t1 = r.nextInt(80)+calcularBonus(time1,time2);
+        t2 = r.nextInt(80)+calcularBonus(time2,time2);
 
         //System.out.println("Jogada VS"+t1+" x "+ t2);
         if (t1> t2){ //chance do time 1
