@@ -12,9 +12,7 @@ public class Partida {
             return 0;
         }
     }
-//    randomJogador(titulares)
-//    random 0-100
-    // if <60
+
     private static void placar(Time time1, Time time2,int[] gols) {
         System.out.println(ConsoleColors.BLUE+time1.getNome()+" "+gols[0]+" X "+gols[1]+" "+time2.getNome()+ConsoleColors.RESET);
     }
@@ -27,7 +25,8 @@ public class Partida {
 //                System.out.println(minuto + "' - Gol do " + time.getNome() + " - No ponta pé inicial!");
 //            } else if (minuto >= 42 && minuto <= 45) {
 //                System.out.println(minuto + "' - Gol do " + time.getNome() + " - No finalzinho do primeiro tempo!");
-//            } else {
+//            }
+//            else {
 //                System.out.println(minuto + "' - Gol do " + time.getNome() + " - Uma paulada de fora da área!");
 //
 //                System.out.println(minuto + "' - Gol do " + time.getNome() + " - Golaço de cabeça!");
