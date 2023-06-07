@@ -30,13 +30,16 @@ public class importarCsv
         ArrayList<Jogador>  jogadores = new ArrayList<>(); // cria uma lista de jogadores
         String nomeJogador[];//Variavel para auxiliar na extração dos dados
 
-        File file = new File("./PojetoBrasFoot/base/tabelajogadorescsvnova.CSV"); // abre o arquivo csv
-//        System.out.println(file.exists());
+        File file = new File("./PojetoBrasFoot/base/jogadorescerto.CSV"); // abre o arquivo csv
+        //System.out.println(file.exists());
         Scanner sc = new Scanner(file);//inicia a classe scanner
         // sc.useDelimiter(",");   //sets the delimiter pattern
+        //String teste=sc.next();
+        //System.out.println(teste);// Separa o id do nome do time
         while (sc.hasNext())  //returns a boolean value
         {
-            nomeJogador = sc.next().split(","); // Separa o id do nome do time
+            nomeJogador = sc.next().split(",");
+
             //nomeTime[0] = id
             //nomeTime[1] = nome
             //nomeTime[2] = idade
@@ -46,7 +49,7 @@ public class importarCsv
             //nomeTime[6] = overral
             //nomeTime[7] = nacionalidade
 
-            jogadores.add(new Jogador(Integer.parseInt(nomeJogador[0].strip()),nomeJogador[1].strip(),nomeJogador[2].strip(),nomeJogador[3].strip(),nomeJogador[4].strip(),nomeJogador[5].strip(),nomeJogador[6].strip(),nomeJogador[7].strip()));//adciona o time a lista de times
+            //jogadores.add(new Jogador(Integer.parseInt(nomeJogador[0].strip()),nomeJogador[1].strip(),nomeJogador[2].strip(),nomeJogador[3].strip(),nomeJogador[4].strip(),nomeJogador[5].strip(),nomeJogador[6].strip(),nomeJogador[7].strip()));//adciona o time a lista de times
         }
         sc.close();  //closes the scanner
         return jogadores; //retorna a lista de times
