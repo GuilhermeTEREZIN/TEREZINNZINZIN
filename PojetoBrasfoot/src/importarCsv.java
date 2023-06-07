@@ -30,7 +30,7 @@ public class importarCsv
         ArrayList<Jogador>  jogadores = new ArrayList<>(); // cria uma lista de jogadores
         String nomeJogador[];//Variavel para auxiliar na extração dos dados
 
-        File file = new File("./PojetoBrasFoot/base/jogadorescerto.CSV"); // abre o arquivo csv
+        File file = new File("./PojetoBrasFoot/base/jogadores.CSV"); // abre o arquivo csv
         //System.out.println(file.exists());
         Scanner sc = new Scanner(file);//inicia a classe scanner
         // sc.useDelimiter(",");   //sets the delimiter pattern
