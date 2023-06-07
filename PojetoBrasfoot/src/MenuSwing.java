@@ -76,7 +76,7 @@ public class MenuSwing {
             public void actionPerformed(ActionEvent e) {
                 // Lógica para a opção "Continuar"
                 //JOptionPane.showMessageDialog(frame, "Continuar selecionado");
-                showPaginaInicial("Bruno - Flamengo", "Copa do Brasil - Flamengo x Santos");
+                showPaginaInicial("Bruno", "Flamengo");
             }
         });
 
@@ -159,6 +159,7 @@ public class MenuSwing {
 
                 // Voltar ao menu principal
                 panel.removeAll();
+
                 showPaginaInicial(nome,time);
             }
         });
@@ -174,7 +175,7 @@ public class MenuSwing {
         });
     }
 
-    private void showPaginaInicial(String jogador, String partida) {
+    private void showPaginaInicial(String jogador, String time) {
         panel.removeAll();
         panel.repaint();
 
@@ -182,7 +183,7 @@ public class MenuSwing {
         gbc.insets = new Insets(10, 10, 10, 10);
 
         // Configurar estilo e posição dos textos
-        JLabel jogadorLabel = new JLabel(jogador);
+        JLabel jogadorLabel = new JLabel(jogador.toUpperCase()+" - "+time.toUpperCase());
         jogadorLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
         jogadorLabel.setFont(new Font("Arial", Font.BOLD, 24)); // Aumentar o tamanho da fonte
         gbc.gridx = 0;
@@ -190,16 +191,74 @@ public class MenuSwing {
         gbc.anchor = GridBagConstraints.NORTH; // Alinhar o texto ao topo
         panel.add(jogadorLabel, gbc);
 
-        JLabel partidaLabel = new JLabel(partida);
-        partidaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
-        partidaLabel.setFont(new Font("Arial", Font.BOLD, 18)); // Aumentar o tamanho da fonte
+//        JLabel timeLabel = new JLabel(time);
+//        timeLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+//        timeLabel.setFont(new Font("Arial", Font.BOLD, 18)); // Aumentar o tamanho da fonte
+//        gbc.gridx = 0;
+//        gbc.gridy = 1;
+//        panel.add(timeLabel, gbc);
+
+        JLabel proximaLabel = new JLabel("Próximo Jogo");
+        proximaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+        proximaLabel.setFont(new Font("Arial", Font.BOLD,20 )); // Aumentar o tamanho da fonte
         gbc.gridx = 0;
-        gbc.gridy = 1;
+        gbc.gridy = 2;
+        panel.add(proximaLabel, gbc);
+
+        JLabel partidaLabel = new JLabel("Copa do Brasil - Flamengo x Santos");
+        partidaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+        partidaLabel.setFont(new Font("Arial", Font.ITALIC, 18)); // Aumentar o tamanho da fonte
+        gbc.gridx = 0;
+        gbc.gridy = 3;
         panel.add(partidaLabel, gbc);
+
+        // Adicionar botões
+        JButton proximaPartidaButton = new JButton("Próxima Partida");
+        JButton mostrarTabelaButton = new JButton("Mostrar Tabela");
+        JButton sairButton = new JButton("Sair");
+
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        panel.add(proximaPartidaButton, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+        panel.add(mostrarTabelaButton, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 6;
+        panel.add(sairButton, gbc);
 
         // Atualizar o painel e redimensionar o JFrame
         panel.revalidate();
         frame.setSize(MENU_LARGURA, MENU_ALTURA);
         frame.setLocationRelativeTo(null);
+
+        // Adicionar os ouvintes de eventos aos botões
+        proximaPartidaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Lógica para a opção "Próxima Partida"
+                // ...
+            }
+        });
+
+        mostrarTabelaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Lógica para a opção "Mostrar Tabela"
+                // ...
+            }
+        });
+
+        sairButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Lógica para a opção "Sair"
+                panel.removeAll();
+                createAndShowGUI();
+            }
+        });
     }
+
 }

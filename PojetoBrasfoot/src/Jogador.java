@@ -1,18 +1,22 @@
 public class Jogador {
+    private int id;
     private String nome;
     private String pais;
     private int idade;
     private String posicao;
     private int overall;
     private int numero;
+    private String clube;
 
-    public Jogador(String nome, String pais, int idade, String posicao,int overall, int numero){
+    public Jogador(int id,String nome, String pais, int idade, String posicao,int overall, int numero,String clube){
+        this.id = id;
         this.nome = nome;
-        this.pais = pais;
         this.idade = idade;
+        this.clube = clube;
         this.posicao = posicao;
-        this.overall = overall;
         this.numero = numero;
+        this.overall = overall;
+        this.pais = pais;
     }
 
     public String getNome() {

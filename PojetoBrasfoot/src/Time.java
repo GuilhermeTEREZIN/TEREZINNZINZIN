@@ -48,10 +48,10 @@ public class Time {
       Over += j.getOverall();
       Contador += 1;
     }
-    return Integer.valueOf(Over / Contador);
+    return Over / Contador;
 
   }
-
+//
   public int overDefesa(boolean titulares) {
     ArrayList<Jogador> jogadores = new ArrayList<>();
     if (titulares){
@@ -62,15 +62,15 @@ public class Time {
     int Over = 0;
     int Contador = 0;
     for (Jogador j : jogadores) {
-      if (j.getPosicao() == "ZAG" || j.getPosicao() == "GO" || j.getPosicao() == "LD" || j.getPosicao() == "LE") {
+      if (j.getPosicao().toString() == "ZAG" || j.getPosicao().toString() == "GO" || j.getPosicao().toString() == "LD" || j.getPosicao().toString() == "LE") {
         Over += j.getOverall();
         Contador += 1;
       }
     }
-    return Integer.valueOf(Over / Contador);
+    return Over / Contador;
 
   }
-
+//
   public int overMeio(boolean titulares) {
     ArrayList<Jogador> jogadores = new ArrayList<>();
     if (titulares){
@@ -81,12 +81,12 @@ public class Time {
     int Over = 0;
     int Contador = 0;
     for (Jogador j : jogadores) {
-      if (j.getPosicao() == "VOL" || j.getPosicao() == "MLG" || j.getPosicao() == "MEI") {
+      if (j.getPosicao().toString()== "VOL" || j.getPosicao().toString() == "MLG" || j.getPosicao().toString() == "MEI") {
         Over += j.getOverall();
         Contador += 1;
       }
     }
-    return Integer.valueOf(Over / Contador);
+    return Over / Contador;
   }
   public int overAtaque(boolean titulares) {
     ArrayList<Jogador> jogadores = new ArrayList<>();
@@ -97,19 +97,19 @@ public class Time {
     }
     int Over = 0;
     int Contador = 0;
-    for (Jogador j : jogadores) {
-      if (j.getPosicao() == "CA" || j.getPosicao() == "PTE" || j.getPosicao() == "PTD") {
+    for (Jogador j : jogadores){
+      if (j.getPosicao().toString() == "CA" || j.getPosicao().toString() == "PTE" || j.getPosicao().toString() == "PTD") {
         Over += j.getOverall();
         Contador += 1;
       }
     }
-    return Integer.valueOf(Over / Contador);
+    return Over / Contador;
   }
    public int calcularForcaAtaque(){
       return round((overAtaque(true)+overMeio(true))/2);
    }
    public int calcularForcaDefesa(){
-     return overDefesa(true);
+     return round(overDefesa(true));
   }
 
 }
