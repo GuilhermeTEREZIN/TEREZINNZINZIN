@@ -2,20 +2,42 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Partida {
-    //fazer um método privado estatico calcularBonus que tenha como entrada time1 e time2
-    //se a diferença entre o poder de ataque do time1 e o poder de defesa do time 2 for positiva
+    private static int calcularBonus(Time Time1, Time Time2) {
+        int diferenca = Time1.calcularForcaAtaque() - Time2.calcularForcaDefesa();
+        if (diferenca > 0) {
+            return diferenca / 2;
+        } else {
+            return 0;
+        }
+    }
 
-        //retorna a metade essa diferença
-
-    //exibir placar Time time1, Time time2,int[] gols
-        //System.out.println(ConsoleColors.BLUE+time1.getNome()+" "+gols[0]+" X "+gols[1]+" "+time2.getNome()+ConsoleColors.RESET);
-
-    //void static Mostrar Mensagens entra um time e o minuto do gol e mostra uma msg diferente dependendo do minuto
-        //exemplo: minuto 90- no finalzinho
-         //exemplo código: System.out.println(minuto+"' - "+"Gol do "+time.getNome());
+    private static void placar(Time time1, Time time2,int[] gols) {
+        System.out.println(ConsoleColors.BLUE+time1.getNome()+" "+gols[0]+" X "+gols[1]+" "+time2.getNome()+ConsoleColors.RESET);
+    }
 
 
-    //private static int acrescimos: pega um número aleatório de até 100, se esse número for menor q 5(sem acrescimo), se for menor que 15 = 1 min, menor que 30 = 2 min,
+
+//        public static void mostrarMensagens(Time time, int minuto) {
+//            if (minuto >= 90) {
+//                System.out.println(minuto + "' - Gol do " + time.getNome() + " - No finalzinho!");
+//            } else if (minuto == 1) {
+//                System.out.println(minuto + "' - Gol do " + time.getNome() + " - No ponta pé inicial!");
+//            } else if (minuto >= 42 && minuto <= 45) {
+//                System.out.println(minuto + "' - Gol do " + time.getNome() + " - No finalzinho do primeiro tempo!");
+//            } else {
+//                System.out.println(minuto + "' - Gol do " + time.getNome() + " - Uma paulada de fora da área!");
+//            } else {
+//                System.out.println(minuto + "' - Gol do " + time.getNome() + " - Golaço de cabeça!");
+//            } else {
+//                System.out.println(minuto + "' - Gol do " + time.getNome() + " - Uma linda cobrança de falta!");
+//            } else {
+//                System.out.println(minuto + "' - Gol do " + time.getNome() + " - De pênalti no cantinho!");
+//            }
+
+
+
+
+            //private static int acrescimos: pega um número aleatório de até 100, se esse número for menor q 5(sem acrescimo), se for menor que 15 = 1 min, menor que 30 = 2 min,
         //menor que 50 = 3 min, menor que 70 = 4 min, menor que 80 = 5 min, menor que 85 = 6, menor que 90 = 7, menor que 93 = 8, menor que 96 = 9, menor que 100 = 10,
         //retorna o valor de acrescimo
     private static void simularEtapa(Time time1, Time time2, int gols[],int inicio,int fim,int ChanceJogada){
