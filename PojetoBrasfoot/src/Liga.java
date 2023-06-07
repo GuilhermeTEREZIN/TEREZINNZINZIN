@@ -1,6 +1,11 @@
+import java.util.ArrayList;
+
 public class Liga implements Tabela{
     String[][] tabela = new String[20][6];
-
+    //id - nome - pontos - jogos - golsfeitos - golsofridos
+    //
+    public Liga(){
+    }
     String getNome(int id);
     void setNome(int id);
     int getPontos(int id);
