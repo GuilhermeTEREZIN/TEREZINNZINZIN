@@ -159,6 +159,7 @@ public class MenuSwing {
 
                 // Voltar ao menu principal
                 panel.removeAll();
+
                 showPaginaInicial(nome,time);
             }
         });

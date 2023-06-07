@@ -1,4 +1,11 @@
+import java.util.Random;
+
 public class Player {
+    private String nome;
+    private Time time;
+    private int rodada;
+    private float dinheiro;
+    private int temporada;
     //nome
     //time
     //rodada
@@ -16,5 +23,11 @@ public class Player {
         CopiaCsv.Copiar("Liga");
         TabelaConfrontos.gerarLiga();
         //TabelaConfrontos.gerarCopa();
+    }
+    public void addSave(String nome,String time){
+        
+    }
+    public void carregarjogo(){
+
     }
 }

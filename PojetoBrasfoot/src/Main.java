@@ -7,7 +7,7 @@ public class Main {
 //        TabelaConfrontos.gerarCopa();
         Player j =new Player();
 //        j.iniciarnovoJogo();
-        TabelaConfrontos.gerarCopa();
+
 //        Menu.menu();
 //        Partida.simularPartida(new Time(1,"santos"),new Time(2,"flamengo"),false);
 //        try {
