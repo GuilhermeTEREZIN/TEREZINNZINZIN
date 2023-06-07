@@ -1,6 +1,6 @@
-public interface Tabela {
+public class Liga implements Tabela{
+    String[][] tabela = new String[20][6];
 
-    void setID(int id);
     String getNome(int id);
     void setNome(int id);
     int getPontos(int id);
@@ -11,7 +11,4 @@ public interface Tabela {
     void setGolssofridos(int id);
     void setJogos(int id);
     int getJogos(int id);
-
-
-
 }
