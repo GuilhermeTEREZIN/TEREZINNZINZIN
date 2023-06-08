@@ -7,7 +7,7 @@ public class Main {
 ////        Menu.menu();
         //Partida.simularPartida(new Time(1,"santos"),new Time(2,"flamengo"),false);
         try {
-            jogadores = importarCsv.CarregarSave();
+            importarCsv.Confrontos();
         }catch (Exception e){
             System.out.println(e);
         }

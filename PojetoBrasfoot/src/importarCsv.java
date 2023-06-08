@@ -80,4 +80,21 @@ public class importarCsv {
 
     }
 
+    public static void Confrontos() throws Exception{
+        String Confrontos[];//Variavel para auxiliar na extração dos dados
+
+        File file = new File("./PojetoBrasFoot/save/confrontosLiga.csv"); // abre o arquivo csv
+        //System.out.println(file.exists());
+        Scanner sc = new Scanner(file);//inicia a classe scanner
+        // sc.useDelimiter(",");   //sets the delimiter pattern
+        Confrontos = sc.next().split(",");
+        while (sc.hasNext())  //returns a boolean value
+        {
+            Confrontos = sc.next().split(",");
+            System.out.println(Confrontos[0] + Confrontos[1] + Confrontos[2] + Confrontos[3]
+            );
+
+        }
+    }
+
 }
