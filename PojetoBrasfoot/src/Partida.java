@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Partida {
+public abstract class Partida {
     private static int calcularBonus(Time Time1, Time Time2) {
         int diferenca = Time1.calcularForcaAtaque() - Time2.calcularForcaDefesa();
 //        int diferenca = 7;
