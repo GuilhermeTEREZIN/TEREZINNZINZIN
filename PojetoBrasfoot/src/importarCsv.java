@@ -38,8 +38,8 @@ public class importarCsv
         while (sc.hasNext())  //returns a boolean value
         {
             nomeJogador = sc.next().split(",");
-            System.out.println(nomeJogador[0]+nomeJogador[1]+nomeJogador[2]+nomeJogador[3]+nomeJogador[4]
-            +nomeJogador[5]+nomeJogador[6]+nomeJogador[7]);
+//            System.out.println(nomeJogador[0]+nomeJogador[1]+nomeJogador[2]+nomeJogador[3]+nomeJogador[4]
+//            +nomeJogador[5]+nomeJogador[6]+nomeJogador[7]);
 
             //nomeTime[0] = id
             //nomeTime[1] = nome
