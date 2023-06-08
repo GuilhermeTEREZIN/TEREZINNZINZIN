@@ -1,33 +1,30 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class importarCsv
-{
-    public static ArrayList<Time> times() throws Exception
-    {
-        ArrayList<Time>  times = new ArrayList<>(); // cria uma lista de times
+public class importarCsv {
+    public static ArrayList<Time> times() throws Exception {
+        ArrayList<Time> times = new ArrayList<>(); // cria uma lista de times
         String nomeTime[];//Variavel para auxiliar na extração dos dados
 
         File file = new File("./PojetoBrasFoot/base/time.csv"); // abre o arquivo csv
 //        System.out.println(file.exists());
         Scanner sc = new Scanner(file);//inicia a classe scanner
-       // sc.useDelimiter(",");   //sets the delimiter pattern
+        // sc.useDelimiter(",");   //sets the delimiter pattern
         while (sc.hasNext())  //returns a boolean value
         {
             nomeTime = sc.next().split(","); // Separa o id do nome do time
             //nomeTime[0] = id
             //nomeTime[1] = nome do time
-            times.add(new Time(Integer.parseInt(nomeTime[0].strip()),nomeTime[1].strip()));//adciona o time a lista de times
+            times.add(new Time(Integer.parseInt(nomeTime[0].strip()), nomeTime[1].strip()));//adciona o time a lista de times
         }
         sc.close();  //closes the scanner
         return times; //retorna a lista de times
 
     }
 
-    public static ArrayList<Jogador> jogadores() throws Exception
-    {
+    public static ArrayList<Jogador> jogadores() throws Exception {
 
-        ArrayList<Jogador>  jogadores = new ArrayList<>(); // cria uma lista de jogadores
+        ArrayList<Jogador> jogadores = new ArrayList<>(); // cria uma lista de jogadores
         String nomeJogador[];//Variavel para auxiliar na extração dos dados
 
         File file = new File("./PojetoBrasFoot/base/jogadores.CSV"); // abre o arquivo csv
@@ -63,4 +60,24 @@ public class importarCsv
         return jogadores; //retorna a lista de times
 
     }
+
+    public static String[] CarregarSave() throws Exception{
+        String CarregarSave[];//Variavel para auxiliar na extração dos dados
+
+        File file = new File("./PojetoBrasFoot/save/save.csv"); // abre o arquivo csv
+        //System.out.println(file.exists());
+        Scanner sc = new Scanner(file);//inicia a classe scanner
+        // sc.useDelimiter(",");   //sets the delimiter pattern
+        CarregarSave = sc.next().split(",");
+        while (sc.hasNext())  //returns a boolean value
+        {
+            CarregarSave = sc.next().split(",");
+            System.out.println(CarregarSave[0] + CarregarSave[1] + CarregarSave[2] + CarregarSave[3] + CarregarSave[4]
+                    );
+
+        }
+        return CarregarSave;
+
+    }
+
 }
