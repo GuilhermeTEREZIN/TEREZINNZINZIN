@@ -11,13 +11,13 @@ public abstract class Funcoes {
     }
     public static void carregarjogo(Player p){
         try {
-
             //Carrega os jogadores nos seus respectivos times
             ArrayList<Time> times = importarCsv.times();
             ArrayList<Jogador> jogadores = importarCsv.jogadores();
             times = inserirJogadoresTime(times,jogadores);
+            // times contem os times já com os jogadores
 
-            String[] save = importarCsv.CarregarSave();
+            String[] save = importarCsv.CarregarSave();//carrega as informações do save
 
             for (Time t:times){
                 if(t.getNome().equals(save[1])){
@@ -33,7 +33,7 @@ public abstract class Funcoes {
             //System.out.println(p.getNome()+" "+p.getTime().getNome());
 
         }catch (Exception e){
-
+            System.out.println(e);
         }
 
     }
@@ -48,7 +48,20 @@ public abstract class Funcoes {
                 }
             }
         }
+        for (Time t:times){
+            ArrayList<Jogador> titulares = new ArrayList<>();
+            titulares = iniciarTitulares(t.getJogadores());
+            t.setTitulares(titulares);
+        }
         return times;
+    }
+    public static ArrayList<Jogador> iniciarTitulares(ArrayList<Jogador> jogadores){
+        ArrayList<Jogador> titulares = new ArrayList<>();
+        for (int i = 0;i<11;i++) {
+            titulares.add(jogadores.get(i));
+        }
+        return titulares;
+
     }
 }
 

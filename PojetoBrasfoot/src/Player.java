@@ -63,4 +63,10 @@ public class Player{
     public void setTimes(ArrayList<Time> times) {
         this.times = times;
     }
+
+    public void printarTimes(){
+        for(int i=0;i<getTimes().size();i++){
+            System.out.println(getTimes().get(0).getNome());
+        }
+    }
 }
