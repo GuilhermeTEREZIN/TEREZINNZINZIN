@@ -1,21 +1,50 @@
 import java.util.ArrayList;
 
-public class Funcoes {
+public abstract class Funcoes {
     public static void iniciarnovoJogo(){
         CopiaCsv.Copiar("save");
         CopiaCsv.Copiar("jogadores");
         CopiaCsv.Copiar("Calendario");
-        CopiaCsv.Copiar("Liga");
+        CopiaCsv.Copiar("times");
         TabelaConfrontos.gerarLiga();
         //TabelaConfrontos.gerarCopa();
     }
+    public static void carregarjogo(Player p){
+        try {
+
+            //Carrega os jogadores nos seus respectivos times
+            ArrayList<Time> times = importarCsv.times();
+            ArrayList<Jogador> jogadores = importarCsv.jogadores();
+            times = inserirJogadoresTime(times,jogadores);
+
+            String[] save = importarCsv.CarregarSave();
+
+            for (Time t:times){
+                if(t.getNome().equals(save[1])){
+                    p.setTime(t);
+                    break;
+                }
+            }
+            p.setNome(save[0]);
+            p.setRodada(Integer.parseInt(save[2]));
+            p.setDinheiro(Float.parseFloat(save[3]));
+            p.setTemporada(Integer.parseInt(save[4]));
+            p.setTimes(times);
+            //System.out.println(p.getNome()+" "+p.getTime().getNome());
+
+        }catch (Exception e){
+
+        }
+
+    }
     public static ArrayList<Time> inserirJogadoresTime(ArrayList<Time> times,ArrayList<Jogador> jogadores){
         for(Time t :times){
-//            System.out.println(t.getNome());
+            //System.out.println(t.getNome());
             for (Jogador j :jogadores) {
                 if (t.getNome().equals(j.getClube())){
-//                    System.out.println(t.getNome()+" :" + j.getClube());
+                    //System.out.println(t.getNome()+" :"+j.getNome() + j.getClube());
                     t.addJogador(j);
+
                 }
             }
         }

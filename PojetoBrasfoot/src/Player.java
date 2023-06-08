@@ -1,31 +1,66 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Player {
+public class Player{
     private String nome;
     private Time time;
     private int rodada;
     private float dinheiro;
     private int temporada;
 
+    private ArrayList<Time> times;
+
     public Player(){
 
     }
     //gets e sets
 
-    public void addSave(String nome,String time){
-        
+
+    public String getNome() {
+        return nome;
     }
-    public void carregarjogo(){
-        try {
-            importarCsv.CarregarSave();
-            ArrayList<Time> times = importarCsv.times();
-            ArrayList<Jogador> jogadores = importarCsv.jogadores();
-            Funcoes.inserirJogadoresTime(times,jogadores);
 
-        }catch (Exception e){
+    public ArrayList<Time> getTimes() {
+        return times;
+    }
 
-        }
+    public float getDinheiro() {
+        return dinheiro;
+    }
 
+    public int getRodada() {
+        return rodada;
+    }
+
+    public int getTemporada() {
+        return temporada;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setDinheiro(float dinheiro) {
+        this.dinheiro = dinheiro;
+    }
+
+    public void setRodada(int rodada) {
+        this.rodada = rodada;
+    }
+
+    public void setTemporada(int temporada) {
+        this.temporada = temporada;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public void setTimes(ArrayList<Time> times) {
+        this.times = times;
     }
 }

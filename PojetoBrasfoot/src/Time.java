@@ -9,11 +9,20 @@ public class Time {
   private ArrayList<Jogador> jogadores;
   private ArrayList<Jogador> titulares;
 
+  private int pontos;
+  private int jogos;
+  private int golsmarcados;
+  private int golsofridos;
 
-  public Time(int id, String nome) {
+
+  public Time(int id, String nome, int pontos,int jogos,int golsmarcados,int golsofridos) {
     this.nome = nome;
     this.id = id;
     this.pais = Pais.BRA;
+    this.pontos = pontos;
+    this.jogos = jogos;
+    this.golsmarcados = golsmarcados;
+    this.golsofridos = golsofridos;
     jogadores = new ArrayList<>();
     titulares = new ArrayList<>();
 
@@ -34,6 +43,7 @@ public class Time {
   public void addJogador(Jogador j) {
     jogadores.add(j);
   }
+  public void addTitular(Jogador j){jogadores.add(j);}
 
   public ArrayList<Jogador> getJogadores() {
     return jogadores;
@@ -41,6 +51,58 @@ public class Time {
 
   public ArrayList<Jogador> getTitulares() {
     return titulares;
+  }
+
+  public void setPais(Pais pais) {
+    this.pais = pais;
+  }
+
+  public void setTitulares(ArrayList<Jogador> titulares) {
+    this.titulares = titulares;
+  }
+
+  public int getGolsofridos() {
+    return golsofridos;
+  }
+
+  public int getGolsmarcados() {
+    return golsmarcados;
+  }
+
+  public int getPontos() {
+    return pontos;
+  }
+
+  public int getJogos() {
+    return jogos;
+  }
+
+  public Pais getPais() {
+    return pais;
+  }
+
+  public void setGolsofridos(int golsofridos) {
+    this.golsofridos = golsofridos;
+  }
+
+  public void setGolsmarcados(int golsmarcados) {
+    this.golsmarcados = golsmarcados;
+  }
+
+  public void setPontos(int pontos) {
+    this.pontos = pontos;
+  }
+
+  public void setJogos(int jogos) {
+    this.jogos = jogos;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public void setJogadores(ArrayList<Jogador> jogadores) {
+    this.jogadores = jogadores;
   }
 
   public int over(boolean titulares) {
