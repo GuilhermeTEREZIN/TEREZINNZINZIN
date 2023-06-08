@@ -76,7 +76,7 @@ public class MenuSwing {
             public void actionPerformed(ActionEvent e) {
                 // Lógica para a opção "Continuar"
                 //JOptionPane.showMessageDialog(frame, "Continuar selecionado");
-                showPaginaInicial("Bruno", "Flamengo");
+                showPaginaInicial();
             }
         });
 
@@ -152,15 +152,9 @@ public class MenuSwing {
             public void actionPerformed(ActionEvent e) {
                 String nome = nomeTextField.getText();
                 String time = (String) generoComboBox.getSelectedItem();
-
-
-                // Lógica para iniciar o jogo com os dados informados
-                //JOptionPane.showMessageDialog(frame, "Iniciar jogo com nome: " + nome + ", gênero: " + genero);
-
-                // Voltar ao menu principal
                 panel.removeAll();
-
-                showPaginaInicial(nome,time);
+                //salvar no arquivo save
+                showPaginaInicial();
             }
         });
 
@@ -175,7 +169,9 @@ public class MenuSwing {
         });
     }
 
-    private void showPaginaInicial(String jogador, String time) {
+    private void showPaginaInicial() {
+        Player p = new Player();
+        Funcoes.carregarjogo(p);
         panel.removeAll();
         panel.repaint();
 
@@ -183,7 +179,7 @@ public class MenuSwing {
         gbc.insets = new Insets(10, 10, 10, 10);
 
         // Configurar estilo e posição dos textos
-        JLabel jogadorLabel = new JLabel(jogador.toUpperCase()+" - "+time.toUpperCase());
+        JLabel jogadorLabel = new JLabel(p.getNome().toUpperCase()+" - "+p.getTime().getNome().toUpperCase());
         jogadorLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
         jogadorLabel.setFont(new Font("Arial", Font.BOLD, 24)); // Aumentar o tamanho da fonte
         gbc.gridx = 0;
