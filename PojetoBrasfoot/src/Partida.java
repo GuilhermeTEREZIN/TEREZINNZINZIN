@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Partida {
+
+public abstract class Partida {
     private static int calcularBonus(Time Time1, Time Time2) {
         int diferenca = Time1.calcularForcaAtaque() - Time2.calcularForcaDefesa();
 //        int diferenca = 7;
@@ -61,7 +62,10 @@ public class Partida {
             }
         }
     }
-    public static void simularPartida(Time time1, Time time2, boolean penalti){
+    public static void simularPartida(Time time1, Time time2, boolean penalti) throws Exception {
+        if(time1.getTitulares().size()<11){
+            throw new Exception();
+        }
         Random r = new Random();
         int[] gols = new int[2];
         gols[0] = 0;gols[1] = 0;

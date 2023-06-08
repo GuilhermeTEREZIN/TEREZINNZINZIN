@@ -6,11 +6,6 @@ public class Player {
     private int rodada;
     private float dinheiro;
     private int temporada;
-    //nome
-    //time
-    //rodada
-    //dinheiro
-    //temporada
 
     public Player(){
 
