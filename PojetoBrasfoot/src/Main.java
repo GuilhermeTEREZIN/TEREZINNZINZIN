@@ -11,6 +11,10 @@ public class Main {
         }catch (Exception e){
             System.out.println(e);
         }
+        for (Jogador j:jogadores){
+
+            System.out.println(j.getNome());;
+        }
 //
 //        for (Time t :times){
 //            System.out.println(t.getNome()+t.getId());

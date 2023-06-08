@@ -34,11 +34,12 @@ public class importarCsv
         //System.out.println(file.exists());
         Scanner sc = new Scanner(file);//inicia a classe scanner
         // sc.useDelimiter(",");   //sets the delimiter pattern
-        //String teste=sc.next();
-        //System.out.println(teste);// Separa o id do nome do time
+
         while (sc.hasNext())  //returns a boolean value
         {
             nomeJogador = sc.next().split(",");
+            System.out.println(nomeJogador[0]+nomeJogador[1]+nomeJogador[2]+nomeJogador[3]+nomeJogador[4]
+            +nomeJogador[5]+nomeJogador[6]+nomeJogador[7]);
 
             //nomeTime[0] = id
             //nomeTime[1] = nome
@@ -49,7 +50,14 @@ public class importarCsv
             //nomeTime[6] = overral
             //nomeTime[7] = nacionalidade
 
-            //jogadores.add(new Jogador(Integer.parseInt(nomeJogador[0].strip()),nomeJogador[1].strip(),nomeJogador[2].strip(),nomeJogador[3].strip(),nomeJogador[4].strip(),nomeJogador[5].strip(),nomeJogador[6].strip(),nomeJogador[7].strip()));//adciona o time a lista de times
+            jogadores.add(new Jogador(Integer.parseInt(nomeJogador[0].strip()),
+                    nomeJogador[1].strip(),
+                    Integer.parseInt(nomeJogador[2].strip()),
+                    nomeJogador[3].strip(),
+                    nomeJogador[4].strip(),
+                    Integer.parseInt(nomeJogador[5]),
+                    Integer.parseInt(nomeJogador[6].strip()),
+                    nomeJogador[7].strip()));//adciona o time a lista de times
         }
         sc.close();  //closes the scanner
         return jogadores; //retorna a lista de times
