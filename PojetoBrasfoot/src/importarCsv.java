@@ -21,9 +21,9 @@ public class importarCsv {
         return times; //retorna a lista de times
 
     }
-    public static ArrayList<Time> tabela() throws Exception {
-        ArrayList<Time> times = new ArrayList<>(); // cria uma lista de times
-        String nomeTime[];//Variavel para auxiliar na extração dos dados
+    public static TabeladoTime tabela(int idtime) throws Exception {
+        TabeladoTime time = null;
+        String[] pontuacaoTime = new String[6];//Variavel para auxiliar na extração dos dados
 
         File file = new File("./PojetoBrasFoot/save/Liga.csv"); // abre o arquivo csv
 //        System.out.println(file.exists());
@@ -31,17 +31,33 @@ public class importarCsv {
         // sc.useDelimiter(",");   //sets the delimiter pattern
         while (sc.hasNext())  //returns a boolean value
         {
-            nomeTime = sc.next().split(","); // Separa o id do nome do time
-            //nomeTime[0] = id
-            //nomeTime[1] = nome do time
-            times.add(new Time(Integer.parseInt(nomeTime[0].strip()), nomeTime[1].strip()));//adciona o time a lista de times
+            pontuacaoTime = sc.next().split(","); // Separa o id do nome do time
+            if (Integer.parseInt(pontuacaoTime[0]) == idtime){
+
+                //nomeTime[0] = id
+                //nomeTime[1] = nome do time
+                //nomeTime[2] = pontos
+                //nomeTime[3] = jogos
+                //nomeTime[4] = gols feitos
+                //nomeTime[5] = gols contra
+
+                time = new TabeladoTime(
+                        Integer.parseInt(pontuacaoTime[0]),
+                        pontuacaoTime[1],
+                        Integer.parseInt(pontuacaoTime[2]),
+                        Integer.parseInt(pontuacaoTime[3]),
+                        Integer.parseInt(pontuacaoTime[4]),
+                        Integer.parseInt(pontuacaoTime[5]));
+//                System.out.println(pontuacaoTime[1]);
+                break;
+            }
+//            System.out.println(nomeTime[0]+nomeTime[1]);
+
         }
         sc.close();  //closes the scanner
-        return times; //retorna a lista de times
+        return time; //retorna a lista de times
 
     }
-
-
     public static ArrayList<Jogador> jogadores() throws Exception {
 
         ArrayList<Jogador> jogadores = new ArrayList<>(); // cria uma lista de jogadores
@@ -92,8 +108,7 @@ public class importarCsv {
         while (sc.hasNext())  //returns a boolean value
         {
             CarregarSave = sc.next().split(",");
-            System.out.println(CarregarSave[0] + CarregarSave[1] + CarregarSave[2] + CarregarSave[3] + CarregarSave[4]
-                    );
+            //System.out.println(CarregarSave[0] + CarregarSave[1] + CarregarSave[2] + CarregarSave[3] + CarregarSave[4]);
 
         }
         return CarregarSave;

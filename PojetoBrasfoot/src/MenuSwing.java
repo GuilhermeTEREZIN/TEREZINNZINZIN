@@ -12,7 +12,7 @@ public class MenuSwing {
     private int FORMULARIO_ALTURA = 300;
     private int FORMULARIO_LARGURA = 400;
 
-    public static void main(String[] args) {
+    public static void iniciarInterface() {
         SwingUtilities.invokeLater(() -> {
             MenuSwing menuSwing = new MenuSwing();
             menuSwing.createAndShowGUI();

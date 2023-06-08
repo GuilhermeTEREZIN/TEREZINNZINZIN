@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Player {
@@ -11,18 +12,20 @@ public class Player {
 
     }
     //gets e sets
-    public void iniciarnovoJogo(){
-        CopiaCsv.Copiar("save");
-        CopiaCsv.Copiar("jogadores");
-        CopiaCsv.Copiar("Calendario");
-        CopiaCsv.Copiar("Liga");
-        TabelaConfrontos.gerarLiga();
-        //TabelaConfrontos.gerarCopa();
-    }
+
     public void addSave(String nome,String time){
         
     }
     public void carregarjogo(){
+        try {
+            importarCsv.CarregarSave();
+            ArrayList<Time> times = importarCsv.times();
+            ArrayList<Jogador> jogadores = importarCsv.jogadores();
+            Funcoes.inserirJogadoresTime(times,jogadores);
+
+        }catch (Exception e){
+
+        }
 
     }
 }

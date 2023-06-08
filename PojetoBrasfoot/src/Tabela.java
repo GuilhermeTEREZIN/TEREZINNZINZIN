@@ -1,6 +1,6 @@
 public interface Tabela {
 
-    void setID(int id);
+//    void setID(int id);
     String getNome(int id);
     void setNome(int id);
     int getPontos(int id);

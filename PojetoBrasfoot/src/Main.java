@@ -2,20 +2,15 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        String[] jogadores;
-//        System.out.println("=-----=-----=BrasFoot 2.0=-----=-----=");
-////        Menu.menu();
-        //Partida.simularPartida(new Time(1,"santos"),new Time(2,"flamengo"),false);
+        ArrayList<Time> times = new ArrayList<>();
+//        MenuSwing.iniciarInterface();
+//        Funcoes.iniciarnovoJogo();
         try {
-            importarCsv.Confrontos();
+            times = Funcoes.inserirJogadoresTime(importarCsv.times(),importarCsv.jogadores());
         }catch (Exception e){
-            System.out.println(e);
+            System.out.println("F");
         }
-//
-//        for (Time t :times){
-//            System.out.println(t.getNome()+t.getId());
-//        }
 
-
+        System.out.println(times.get(0).getJogadores().size());
     }
 }

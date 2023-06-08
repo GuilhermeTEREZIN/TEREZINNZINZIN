@@ -12,7 +12,7 @@ public class CopiaCsv {
 
         try {
             copiarArquivoCSV(arquivoOrigem, arquivoDestino);
-            System.out.println("Arquivo CSV copiado com sucesso!");
+            //System.out.println("Arquivo CSV copiado com sucesso!");
         } catch (IOException e) {
             System.out.println("Ocorreu um erro ao copiar o arquivo CSV: " + e.getMessage());
         }

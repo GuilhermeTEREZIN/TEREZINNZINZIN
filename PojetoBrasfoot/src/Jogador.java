@@ -67,4 +67,11 @@ public class Jogador {
         this.numero = numero;
     }
 
+    public String getClube() {
+        return clube;
+    }
+
+    public void setClube(String clube) {
+        this.clube = clube;
+    }
 }
