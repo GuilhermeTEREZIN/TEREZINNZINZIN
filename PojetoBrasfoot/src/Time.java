@@ -35,6 +35,14 @@ public class Time {
     jogadores.add(j);
   }
 
+  public ArrayList<Jogador> getJogadores() {
+    return jogadores;
+  }
+
+  public ArrayList<Jogador> getTitulares() {
+    return titulares;
+  }
+
   public int over(boolean titulares) {
     ArrayList<Jogador> jogadores = new ArrayList<>();
     if (titulares){
