@@ -119,7 +119,7 @@
 119,YuriAlberto,23,Corinthians,CA,9,80,BRA
 120,RogerGuedes,28,Corinthians,CA,10,81,BRA
 121,Romero,32,Corinthians,PTE,11,77,PAR
-122Cassio,37,Corinthians,GO,12,82,BRA
+122,Cassio,37,Corinthians,GO,12,82,BRA
 123,Caetano,25,Corinthians,ZAG,13,71,BRA
 124,Gil,37,Corinthians,ZAG,14,76,BRA
 125,Bidu,25,Corinthians,LE,15,75,BRA
@@ -187,7 +187,7 @@
 187,JonathanCafu,30,Cuiaba,PTD,11,76,BRA
 188,JCarlos,34,Cuiaba,GO,12,74,BRA
 189,Julio,23,Cuiaba,ZAG,13,69,BRA
-190,Sidcley,28,Cuiaba,LE
+190,Sidcley,28,Cuiaba,LE,14,70,BRA
 191,MAlexandre,23,Cuiaba,LD,15,73,BRA
 192,VBarreta,23,Cuiaba,GO,16,72,BRA
 193,WellingtonSilva,30,Cuiaba,PTD,17,76,BRA
@@ -391,13 +391,13 @@
 391,Camacho,33,Santos,MLG,18,75,BRA
 392,Sandry,20,Santos,VOL,19,74,BRA
 393,Mendoza,30,Santos,PTE,20,78,COL
-394,LucasBraga,26,SantosPTD,21,76,BRA
+394,LucasBraga,26,Santos,PTD,21,76,BRA
 395,Patati,19,Santos,PTD,22,73,BRA
 396,Rafael,33,SaoPaulo,GO,1,77,BRA
 397,Rafinha,36,SaoPaulo,LD,2,78,BRA
 398,DiegoCosta,23,SaoPaulo,ZAG,3,78,BRA
 399,Arboleda,30,SaoPaulo,ZAG,4,80,EQU
-400,GabrielNeves,23,SaoPaulo,5,78,URU
+400,GabrielNeves,23,SaoPaulo,MEI,5,78,URU
 401,Welington,22,SaoPaulo,LE,6,77,BRA
 402,Galoppo,23,SaoPaulo,MEI,7,80,ARG
 403,RodrigoNestor,23,SaoPaulo,MLG,8,76,BRA
@@ -432,7 +432,7 @@
 432,Ulisses,22,Vasco,ZAG,15,72,BRA
 433,Edimar,34,Vasco,LE,16,73,BRA
 434,Weverton,23,Vasco,VOL,17,72,BRA
-435,MarlonGomes,20,Vasco,18,77,BRA
+435,MarlonGomes,20,Vasco,MEI,18,77,BRA
 436,Laranjeira,23,Vasco,MEI,19,75,BRA
 437,GabrielPec,21,Vasco,PTD,20,77,BRA
 438,Erick,26,Vasco,PTE,21,74,BRA

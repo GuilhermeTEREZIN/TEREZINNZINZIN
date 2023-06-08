@@ -8,7 +8,7 @@ public class Jogador {
     private int numero;
     private String clube;
 
-    public Jogador(int id,String nome, String pais, int idade, String posicao,int overall, int numero,String clube){
+    public Jogador(int id,String nome, int idade, String clube,String posicao, int numero,int overall,String pais){
         this.id = id;
         this.nome = nome;
         this.idade = idade;
