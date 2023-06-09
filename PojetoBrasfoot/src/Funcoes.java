@@ -44,7 +44,6 @@ public abstract class Funcoes {
                 if (t.getNome().equals(j.getClube())){
                     //System.out.println(t.getNome()+" :"+j.getNome() + j.getClube());
                     t.addJogador(j);
-
                 }
             }
         }

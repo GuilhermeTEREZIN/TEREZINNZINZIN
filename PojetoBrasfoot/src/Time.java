@@ -29,6 +29,7 @@ public class Time {
   }
   public int over(boolean titulares) {
     ArrayList<Jogador> jogadores = new ArrayList<>();
+    //Opção de pegar somente os titulares ou todos os jogadores
     if (titulares){
       jogadores = this.titulares;
     }else {
@@ -36,11 +37,11 @@ public class Time {
     }
     int Over = 0;
     int Contador = 0;
-    for (Jogador j : jogadores) {
+    for (Jogador j : jogadores) { //laço de repetição que itera todos os jogadores do time
       Over += j.getOverall();
       Contador += 1;
     }
-    return Over / Contador;
+    return Over / Contador; ///retorna a média de over geraç
 
   }
 //
@@ -54,12 +55,13 @@ public class Time {
     int Over = 0;
     int Contador = 0;
     for (Jogador j : jogadores) {
-      if (j.getPosicao().toString() == "ZAG" || j.getPosicao().toString() == "GO" || j.getPosicao().toString() == "LD" || j.getPosicao().toString() == "LE") {
+      //somente conta os defensores
+      if (j.getPosicao().equals("ZAG") || j.getPosicao().equals("GO") || j.getPosicao().equals("LD") || j.getPosicao().equals("LE")) {
         Over += j.getOverall();
         Contador += 1;
       }
     }
-    return Over / Contador;
+    return Over / Contador;//retorna a média de over dos defensores
 
   }
 //
@@ -73,12 +75,13 @@ public class Time {
     int Over = 0;
     int Contador = 0;
     for (Jogador j : jogadores) {
-      if (j.getPosicao().toString()== "VOL" || j.getPosicao().toString() == "MLG" || j.getPosicao().toString() == "MEI") {
+      //conta somente os meio-campistass
+      if (j.getPosicao().equals("VOL") || j.getPosicao().equals("MLG") || j.getPosicao().equals("MEI")) {
         Over += j.getOverall();
         Contador += 1;
       }
     }
-    return Over / Contador;
+    return Over / Contador;//retorna a média dos meio-campos
   }
   public int overAtaque(boolean titulares) {
     ArrayList<Jogador> jogadores = new ArrayList<>();
@@ -90,18 +93,19 @@ public class Time {
     int Over = 0;
     int Contador = 0;
     for (Jogador j : jogadores){
-      if (j.getPosicao().toString() == "CA" || j.getPosicao().toString() == "PTE" || j.getPosicao().toString() == "PTD") {
+      //conta somente os atacantes
+      if (j.getPosicao().equals("CA") || j.getPosicao().equals("PTE") || j.getPosicao().equals("PTD")) {
         Over += j.getOverall();
         Contador += 1;
       }
     }
-    return Over / Contador;
+    return Over / Contador;//retorna média dos atacantes
   }
    public int calcularForcaAtaque(){
-      return round((overAtaque(true)+overMeio(true))/2);
+      return (overAtaque(true)+overMeio(true))/2;
    }
    public int calcularForcaDefesa(){
-     return round(overDefesa(true));
+     return overDefesa(true);
   }
 
   public Pais getPais() {
