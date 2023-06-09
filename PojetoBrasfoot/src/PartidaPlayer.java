@@ -4,17 +4,76 @@ import java.util.concurrent.TimeUnit;
 public class PartidaPlayer extends Partida{
     @Override
     public void simularParida(Time time1,Time time2,int[] gols) throws Exception {
+        if(time1.getTitulares().size()<11||time2.getTitulares().size()<11){
+            throw new Exception("Partida Cancelada");
+        }
+
+        simularEtapa(time1,time2,gols,10,15,1,45);
+        System.out.println("Fim do Primeiro Tempo\n");
+        TimeUnit.SECONDS.sleep(5);
+        simularEtapa(time1,time2,gols,10,15,46,90);
+        System.out.println("Fim da Partida");
+        placar(time1,time2,gols);
 
     }
-//    public  void simularParida(Time time1,Time time2,int[] gols,int[] golsPenalti)throws Exception{
-//
-//    }
-//
+
+    public void simularEtapa(Time time1,Time time2,int[] gols,int qtdeJogadas, int chanceGol,int inicio,int fim){
+        Random r = new Random();
+
+        for(int i = inicio; i<=fim;i++){
+            System.out.println(i+"'");
+
+            try {
+                TimeUnit.MILLISECONDS.sleep(600);
+            }catch (Exception e){}
+
+            if (r.nextInt(qtdeJogadas) == 0){
+                chanceGol(time1,time2,gols,chanceGol);
+            }
+        }
+        int acrescimos = 5;
+        if(acrescimos>0){
+            System.out.println("Acrescimos: +"+acrescimos );
+            for ( int i = fim+1;i<=fim+acrescimos;i++){
+                System.out.println(fim+"+"+(i-fim)+"'");
+
+                try {
+                    TimeUnit.MILLISECONDS.sleep(600);
+                }catch (Exception e){}
+
+                if (r.nextInt(qtdeJogadas) == 0){
+                     chanceGol(time1,time2,gols,chanceGol/2);
+                }
+            }
+        }
+
+    }
     @Override
     public void chanceGol(Time time1,Time time2,int[] gols,int chance) {
+        Random r = new Random();
+        int t1 = r.nextInt(81)+calcularBonus(time1,time2);
+        int t2 = r.nextInt(81)+calcularBonus(time2,time1);
+        if (t1>t2){
+            if( r.nextInt(100)<chance){
+                gols[0]+=1;
+            }else if( r.nextInt(10)==0){ // chance de contra-ataque
+                if ( r.nextInt(100)<chance){
+                    gols[1]+=0;
 
+                }
+            }
+        }else if (t2>t1){
+            if( r.nextInt(100)<chance){
+                gols[1]+=1;
+            }else if( r.nextInt(10)==0){//chance de contra-ataque
+                if ( r.nextInt(100)<chance){
+                    gols[0]+=0;
+                }
+            }
+        }
+        placar(time1,time2,gols);
+        
     }
-    public void simularEtapa();
     //sobrecarga
     public void placar(Time time1, Time time2, int[] gols, int[] golsPenalti){
         System.out.println(ConsoleColors.CYAN+time1.getNome()+" "+gols[0]+"("+golsPenalti[0]+") X "+gols[1]+"("+golsPenalti[1]+") "+time2.getNome()+ConsoleColors.RESET);
