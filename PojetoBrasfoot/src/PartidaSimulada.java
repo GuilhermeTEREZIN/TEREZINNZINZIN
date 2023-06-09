@@ -10,8 +10,8 @@ public class PartidaSimulada extends Partida {
         }
         for(int i = 0; i<=90;i++){
             Random r = new Random();
-            if (r.nextInt(10) == 0){
-                chanceGol(time1,time2,gols,15);
+            if (r.nextInt(8) == 0){
+                chanceGol(time1,time2,gols,17);
             }
         }
         placar(time1,time2,gols);
