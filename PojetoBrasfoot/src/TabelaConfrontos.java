@@ -28,7 +28,7 @@ public class TabelaConfrontos {
         List<String[]> fixtureTable = generateFixtureTable(teams);
 
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
-            writer.println("Rodada,Jogo,Time da Casa,Time Visitante");
+            writer.println("Rodada,Jogo,TimedaCasa,TimeVisitante");
             writeFixtureTable(writer, fixtureTable);
             writeFixtureTable(writer, reverseFixtureTable(fixtureTable));
             //System.out.println("Tabela de confrontos gerada e salva no arquivo '" + filename + "'.");

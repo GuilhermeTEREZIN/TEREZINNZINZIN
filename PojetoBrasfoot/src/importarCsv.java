@@ -83,6 +83,12 @@ public class importarCsv {
 
         while (sc.hasNext())  //returns a boolean value
         {
+            //nomeTime[0] = nome
+            //nomeTime[1] = time
+            //nomeTime[2] = rodada
+            //nomeTime[3] = dinheiro
+            //nomeTime[4] = temporada
+
             CarregarSave = sc.next().split(",");
 
         }
@@ -90,8 +96,9 @@ public class importarCsv {
 
     }
 
-    public static void Confrontos() throws Exception{
-        String Confrontos[];//Variavel para auxiliar na extração dos dados
+    public static String[][] Confrontos(int rodada) throws Exception{
+        String[][] retorno = new String[10][4];
+        String[] Confrontos;//Variavel para auxiliar na extração dos dados
 
         File file = new File("./PojetoBrasFoot/save/confrontosLiga.csv"); // abre o arquivo csv
         //System.out.println(file.exists());
@@ -101,10 +108,22 @@ public class importarCsv {
         while (sc.hasNext())  //returns a boolean value
         {
             Confrontos = sc.next().split(",");
-            System.out.println(Confrontos[0] + Confrontos[1] + Confrontos[2] + Confrontos[3]
-            );
+
+            //nomeTime[0] = rodada
+            //nomeTime[1] = jogo
+            //nomeTime[2] = time1
+            //nomeTime[3] = time2
+            if(Integer.parseInt(Confrontos[0]) == rodada){
+                retorno[Integer.parseInt(Confrontos[1])-1][0] = Confrontos[0];
+                retorno[Integer.parseInt(Confrontos[1])-1][1] = Confrontos[1];
+                retorno[Integer.parseInt(Confrontos[1])-1][2] = Confrontos[2];
+                retorno[Integer.parseInt(Confrontos[1])-1][3] = Confrontos[3];
+
+            }
+            //System.out.println(Confrontos[0] + Confrontos[1] + Confrontos[2] + Confrontos[3]);
 
         }
+        return retorno;
     }
 
 

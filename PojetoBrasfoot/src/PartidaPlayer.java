@@ -75,9 +75,13 @@ public class PartidaPlayer extends Partida{
         placar(time1,time2,gols);
 
     }
+    @Override
+    public void placar(Time time1, Time time2,int[] gols) {
+        System.out.println(ConsoleColors.CYAN_BOLD  +time1.getNome()+" "+gols[0]+" X "+gols[1]+" "+time2.getNome()+ConsoleColors.RESET);
+    }
     //sobrecarga
     public void placar(Time time1, Time time2, int[] gols, int[] golsPenalti){
-        System.out.println(ConsoleColors.CYAN+time1.getNome()+" "+gols[0]+"("+golsPenalti[0]+") X "+gols[1]+"("+golsPenalti[1]+") "+time2.getNome()+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.CYAN_BOLD+time1.getNome()+" "+gols[0]+"("+golsPenalti[0]+") X "+gols[1]+"("+golsPenalti[1]+") "+time2.getNome()+ConsoleColors.RESET);
 
     }
         //private static int acrescimos: pega um número aleatório de até 100, se esse número for menor q 5(sem acrescimo), se for menor que 15 = 1 min, menor que 30 = 2 min,
