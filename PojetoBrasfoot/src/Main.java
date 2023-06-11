@@ -6,8 +6,5 @@ public class Main {
 //        Funcoes.carregarjogo(p);
 //        Funcoes.proximaRodada(p);
         MenuSwing.iniciarInterface();
-
-
-
     }
 }

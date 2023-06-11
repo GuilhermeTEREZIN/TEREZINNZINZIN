@@ -248,8 +248,8 @@ public class MenuSwing {
         proximaPartidaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Lógica para a opção "Próxima Partida"
-                // ...
+                panel.removeAll();
+                simRodada(p);
             }
         });
 
@@ -338,5 +338,47 @@ public class MenuSwing {
         });
     }
 
+    private void simRodada(Player p) {
+        panel.removeAll();
+        panel.repaint();
+
+        // Configurar o layout do painel principal
+        panel.setLayout(new BorderLayout());
+
+        // Criar o painel interno para adicionar os componentes
+        JPanel contentPanel = new JPanel(new GridBagLayout());
+        contentPanel.setBackground(new Color(0, 128, 0)); // Definir cor de fundo verde escuro
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10); // Definir margens
+
+        // Adicionar os componentes à página
+        JLabel tituloLabel = new JLabel("Rodada");
+        tituloLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        tituloLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        contentPanel.add(tituloLabel, gbc);
+
+        // Adicionar mais componentes conforme necessário
+        int i = 0;
+        Funcoes.simularRodada(p);
+
+        // Criar o painel rolável
+        JScrollPane scrollPane = new JScrollPane(contentPanel);
+        scrollPane.setPreferredSize(new Dimension(MENU_LARGURA, MENU_ALTURA));
+
+        // Adicionar o painel rolável ao painel principal
+        panel.add(scrollPane, BorderLayout.CENTER);
+
+        // Adicionar o painel ao JFrame
+        frame.getContentPane().add(panel);
+
+        // Configurar o tamanho e a visibilidade do JFrame
+        frame.setSize(MENU_LARGURA, MENU_ALTURA);
+        frame.setLocationRelativeTo(null); // Centralizar a janela na tela
+        frame.setVisible(true);
+    }
+
 
 }
+
