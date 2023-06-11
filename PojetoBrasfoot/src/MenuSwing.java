@@ -201,8 +201,16 @@ public class MenuSwing {
         gbc.gridx = 0;
         gbc.gridy = 2;
         panel.add(proximaLabel, gbc);
+        JLabel partidaLabel;
+        try {
+            String[] rodada = Funcoes.proximoJogo(p);
+             partidaLabel = new JLabel("Brasileirão "+rodada[0]+"° Rodada "+rodada[2]+" x "+rodada[3]);
 
-        JLabel partidaLabel = new JLabel("Copa do Brasil - Flamengo x Santos");
+        }catch (Exception e){
+            System.out.println(e);
+             partidaLabel = new JLabel("Brasileirão 3° Rodada - Flamengo x Santos");
+
+        }
         partidaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
         partidaLabel.setFont(new Font("Arial", Font.ITALIC, 18)); // Aumentar o tamanho da fonte
         gbc.gridx = 0;
@@ -212,6 +220,7 @@ public class MenuSwing {
         // Adicionar botões
         JButton proximaPartidaButton = new JButton("Próxima Partida");
         JButton mostrarTabelaButton = new JButton("Mostrar Tabela");
+        JButton mostrarProximaRodada = new JButton("Próxima Rodada");
         JButton sairButton = new JButton("Sair");
 
         gbc.gridx = 0;
@@ -224,6 +233,10 @@ public class MenuSwing {
 
         gbc.gridx = 0;
         gbc.gridy = 6;
+        panel.add(mostrarProximaRodada, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 7;
         panel.add(sairButton, gbc);
 
         // Atualizar o painel e redimensionar o JFrame
@@ -247,6 +260,13 @@ public class MenuSwing {
                 // ...
             }
         });
+        mostrarProximaRodada.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panel.removeAll();
+                showRodada(p);
+            }
+        });
 
         sairButton.addActionListener(new ActionListener() {
             @Override
@@ -257,5 +277,66 @@ public class MenuSwing {
             }
         });
     }
+    private void showRodada(Player p) {
+        panel.removeAll();
+        panel.repaint();
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+
+        // Adicionar componentes da página
+        JLabel tituloLabel = new JLabel("Detalhes da Rodada");
+        tituloLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        tituloLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        panel.add(tituloLabel, gbc);
+
+        JLabel rodadaLabel = new JLabel("Rodada: " + p.getRodada());
+        rodadaLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        rodadaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        panel.add(rodadaLabel, gbc);
+        int i = 0;
+        try {
+            String[][] rodada = importarCsv.Confrontos(p.getRodada());
+
+            for (i = 0;i<10;i++){
+                JLabel partidaLabel = new JLabel(rodada[i][2] + " x " + rodada[i][3]);
+                partidaLabel.setFont(new Font("Arial", Font.ITALIC, 18));
+                partidaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+                gbc.gridx = 0;
+                gbc.gridy = i+2;
+                panel.add(partidaLabel, gbc);
+
+            }
+        }catch(Exception e){
+            JLabel partidaLabel = new JLabel("Jogos ainda não Definidos");
+            partidaLabel.setFont(new Font("Arial", Font.BOLD, 18));
+            partidaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+            gbc.gridx = 0;
+            gbc.gridy = 2;
+            panel.add(partidaLabel, gbc);
+        }
+
+        JButton sairButton = new JButton("Sair");
+        gbc.gridx = 0;
+        gbc.gridy = i+3;
+        panel.add(sairButton, gbc);
+
+        // Atualizar o painel e redimensionar o JFrame
+        panel.revalidate();
+        frame.setSize(MENU_LARGURA, MENU_ALTURA);
+        frame.setLocationRelativeTo(null);
+
+        sairButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showPaginaInicial();
+            }
+        });
+    }
+
 
 }

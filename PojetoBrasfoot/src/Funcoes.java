@@ -66,6 +66,30 @@ public abstract class Funcoes {
         return titulares;
 
     }
+    public static String[] proximoJogo(Player p) throws Exception{
+
+        String[][] rodada = importarCsv.Confrontos(p.getRodada());
+//        System.out.println(p.getTime().getNome());
+        for (int i = 0;i<10;i++){
+            if(p.getTime().getNome().equals(rodada[i][2])||p.getTime().getNome().equals(rodada[i][3])){
+                return rodada[i];
+            }
+        }
+        return rodada[0];
+    }
+
+    public static void proximaRodada(Player p){
+        try {
+            String[][] rodada = importarCsv.Confrontos(p.getRodada());
+            for (int i = 0;i<10;i++){
+                System.out.println(ConsoleColors.GREEN_BOLD+ "Rodada "+rodada[i][0]+" Jogo: "+rodada[i][1]+ConsoleColors.RESET+
+                        "\n"+rodada[i][2]+" x "+rodada[i][3]);
+            }
+        }catch (Exception e){
+            System.out.println("Esquema de Apostas descoberto, rodada cancelada");
+        }
+
+    }
 
     public static void simularRodada(Player p){
         try {
