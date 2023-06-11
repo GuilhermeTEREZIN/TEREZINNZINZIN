@@ -154,6 +154,7 @@ public class MenuSwing {
                 String time = (String) generoComboBox.getSelectedItem();
                 panel.removeAll();
                 //salvar no arquivo save
+                Funcoes.iniciarnovoJogo(nome,time);
                 showPaginaInicial();
             }
         });

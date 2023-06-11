@@ -3,15 +3,16 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public abstract class Funcoes {
-    public static void iniciarnovoJogo(){
+    public static void iniciarnovoJogo(String nome,String time){
         CopiaCsv.Copiar("save");
+        exportCsv.exportSave(nome,time,1,100f,1);
         CopiaCsv.Copiar("jogadores");
         CopiaCsv.Copiar("Calendario");
         CopiaCsv.Copiar("times");
         TabelaConfrontos.gerarLiga();
         //TabelaConfrontos.gerarCopa();
     }
-    public static void carregarjogo(Player p){
+    public static void carregarjogo(Player p) {
         try {
             //Carrega os jogadores nos seus respectivos times
             ArrayList<Time> times = importarCsv.times();
