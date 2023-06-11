@@ -91,7 +91,9 @@ public abstract class Funcoes {
 
     }
 
-    public static void simularRodada(Player p){
+    public static String[][] simularRodada(Player p){
+        String[][] armazenaResults = new String[10][4];
+
         try {
             Scanner sc = new Scanner(System.in);
             PartidaPlayer Playerp =  new PartidaPlayer();
@@ -117,10 +119,11 @@ public abstract class Funcoes {
                 if (time1.getNome().equals(p.getTime().getNome())||time2.getNome().equals(p.getTime().getNome())) {
                     System.out.println(ConsoleColors.CYAN_UNDERLINED+"-------------------------------------\nPróximo Jogo(Digite Algo Para Continuar)"+ConsoleColors.RESET);
                     System.out.println(ConsoleColors.CYAN+ time1.getNome()+" x "+time2.getNome());
-                    sc.next();
+                    //sc.next();
                     Playerp.simularParida(time1,time2,gols);
+
                     System.out.println("(Digite Algo Para Continuar)");
-                    sc.next();
+                    //sc.next();
                 }else {
                     Simulp.simularParida(time1,time2,gols);
                 }
@@ -142,13 +145,20 @@ public abstract class Funcoes {
                     time1.setPontos(time1.getPontos()+1);
                     time2.setPontos(time2.getPontos()+1);
                 }
-                TimeUnit.SECONDS.sleep(2);
-
+                armazenaResults[i][0] = time1.getNome();
+                armazenaResults[i][1] = Integer.toString(gols[0]);
+                armazenaResults[i][2] = time2.getNome();
+                armazenaResults[i][3] = Integer.toString(gols[1]);
+//                TimeUnit.SECONDS.sleep(2);
             }
+            p.setRodada(p.getRodada()+1);
         }catch (Exception e){
             System.out.println(e);
             System.out.println("Esquema de Apostas descoberto, rodada cancelada");
         }
+
+        return armazenaResults;
+
     }
 }
 
