@@ -118,6 +118,7 @@ public class Liga implements Tabela {
 
     @Override
     public ArrayList<Time> getTabela() {
+        organizarTabela();
         return tabela;
     }
 }

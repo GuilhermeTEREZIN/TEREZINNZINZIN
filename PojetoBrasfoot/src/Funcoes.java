@@ -130,6 +130,9 @@ public abstract class Funcoes {
 
                     System.out.println("(Digite Algo Para Continuar)");
                     sc.next();
+                    if (i!=9){
+                        System.out.println("Restante da Rodada");
+                    }
                 }else {
                     Simulp.simularParida(time1,time2,gols);
                 }
@@ -162,7 +165,7 @@ public abstract class Funcoes {
                 armazenaResults[i][1] = Integer.toString(gols[0]);
                 armazenaResults[i][2] = time2.getNome();
                 armazenaResults[i][3] = Integer.toString(gols[1]);
-//                TimeUnit.SECONDS.sleep(2);
+                TimeUnit.SECONDS.sleep(2);
             }
         }catch (Exception e){
             System.out.println(e);

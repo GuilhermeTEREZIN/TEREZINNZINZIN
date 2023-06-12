@@ -10,7 +10,7 @@ public class PartidaPlayer extends Partida{
         }
         simularEtapa(time1,time2,gols,10,15,1,45);
         System.out.println("Fim do Primeiro Tempo\n");
-//        TimeUnit.SECONDS.sleep(5);
+        TimeUnit.SECONDS.sleep(5);
         simularEtapa(time1,time2,gols,10,15,46,90);
         System.out.println("Fim da Partida");
         placar(time1,time2,gols);

@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
@@ -471,7 +472,30 @@ public class MenuSwing {
             i++;
         }
 
-        JTable tabela = new JTable(dados, colunas);
+        JTable tabela = new JTable(dados, colunas) {
+            @Override
+            public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
+                Component component = super.prepareRenderer(renderer, row, column);
+
+                // Set the background color for the first four rows to green
+                if (row < 4) {
+                    component.setBackground(Color.GREEN);
+                    component.setForeground(Color.DARK_GRAY);
+                }
+                // Set the background color for the last four rows to red
+                else if (row >= getRowCount() - 4) {
+                    component.setBackground(Color.RED);
+                    component.setForeground(Color.WHITE);
+
+                }
+                // Reset the background color for other rows
+                else {
+                    component.setBackground(Color.WHITE);
+                }
+
+                return component;
+            }
+        };
         tabela.setFont(new Font("Arial", Font.PLAIN, 16));
         tabela.setForeground(Color.BLACK);
         tabela.setBackground(Color.WHITE);
@@ -479,24 +503,40 @@ public class MenuSwing {
         tabela.setEnabled(false);
 
         JScrollPane scrollPane = new JScrollPane(tabela);
-        scrollPane.setPreferredSize(new Dimension(1500, 600));
+        scrollPane.setPreferredSize(new Dimension(1500, 520));
         gbc.gridx = 0;
         gbc.gridy = 1;
         panel.add(scrollPane, gbc);
+        String[][] dados2 = {{"Melhor Ataque", ""}, {"Melhor Defesa", ""}};
+
+
+        if (p.getRodada()>1){
+            dados2[0][0] = "Melhor Ataque";
+            dados2[1][0] = "Melhor Defesa";
+
+            dados2[0][0] = l.melhorAtaque().getNome();
+            dados2[0][1] = l.melhorDefesa().getNome();
+        }
+        String[] colunas2 = {"Estatitica", "Time"};
+
+        JTable tabela2 = new JTable(dados2, colunas2);
+        tabela2.setFont(new Font("Arial", Font.PLAIN, 16));
+        tabela2.setForeground(Color.BLACK);
+        tabela2.setBackground(Color.WHITE);
+        tabela2.setRowHeight(30);
+        tabela2.setEnabled(false);
+
+        JScrollPane scrollPane2 = new JScrollPane(tabela2);
+        scrollPane2.setPreferredSize(new Dimension(500, 100));
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        panel.add(scrollPane2, gbc);
 
         JButton sairButton = new JButton("Voltar");
         gbc.gridx = 0;
-        gbc.gridy = 2;
+        gbc.gridy = 3;
         panel.add(sairButton, gbc);
 
-        // Ajustar o tamanho das colunas
-        TableColumnModel columnModel = tabela.getColumnModel();
-        for (int columnIndex = 0; columnIndex < columnModel.getColumnCount(); columnIndex++) {
-            TableColumn column = columnModel.getColumn(columnIndex);
-            if (!column.getHeaderValue().equals("Time")) {
-                column.setPreferredWidth(100); // Defina o tamanho desejado para as colunas que não são do nome
-            }
-        }
 
         // Atualizar o painel e redimensionar o JFrame
         panel.revalidate();
