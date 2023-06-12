@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -231,6 +233,7 @@ public class MenuSwing {
         JButton proximaPartidaButton = new JButton("Próxima Partida");
         JButton mostrarTabelaButton = new JButton("Mostrar Tabela");
         JButton mostrarProximaRodada = new JButton("Próxima Rodada");
+        JButton salvarButtom = new JButton("Salvar Resultados");
         JButton sairButton = new JButton("Voltar");
 
         gbc.gridx = 0;
@@ -247,6 +250,10 @@ public class MenuSwing {
 
         gbc.gridx = 0;
         gbc.gridy = 7;
+        panel.add(salvarButtom, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 8;
         panel.add(sairButton, gbc);
 
         // Atualizar o painel e redimensionar o JFrame
@@ -267,6 +274,9 @@ public class MenuSwing {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Lógica para a opção "Mostrar Tabela"
+                panel.removeAll();
+
+                mostrarTabela( p);
                 // ...
             }
         });
@@ -275,6 +285,22 @@ public class MenuSwing {
             public void actionPerformed(ActionEvent e) {
                 panel.removeAll();
                 showRodada(p);
+            }
+        });
+
+        salvarButtom.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ///salvar no times.csv
+                try {
+                    ////////salvar tabela
+                    exportCsv.exportSave(p.getNome(),p.getTime().getNome(),p.getRodada(),p.getDinheiro(),p.getTemporada());
+                    System.out.println("Dados Salvos");
+
+
+                }catch (Exception f){
+                    System.out.println("Dados não Salvos");
+                }
             }
         });
 
@@ -374,6 +400,7 @@ public class MenuSwing {
             String[][] rodada = Funcoes.simularRodada(p);
 
             for (i = 0;i<10;i++){
+
                 JLabel partidaLabel = new JLabel(rodada[i][0] +" " + rodada[i][1]+" x "+ rodada[i][3]+" " + rodada[i][2]);
                 partidaLabel.setFont(new Font("Arial", Font.ITALIC, 18));
                 partidaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
@@ -409,52 +436,80 @@ public class MenuSwing {
         });
     }
 
-//    private void simRodada(Player p) {
-//        panel.removeAll();
-//        panel.repaint();
-//
-//        panel.setLayout(new BorderLayout());
-//
-//        JPanel contentPanel = new JPanel(new GridBagLayout());
-//        contentPanel.setBackground(new Color(0, 128, 0));
-//        GridBagConstraints gbc = new GridBagConstraints();
-//        gbc.insets = new Insets(10, 10, 10, 10);
-//
-//        JLabel tituloLabel = new JLabel("Resumo da Rodada:");
-//        tituloLabel.setFont(new Font("Arial", Font.BOLD, 24));
-//        tituloLabel.setForeground(Color.WHITE);
-//        gbc.gridx = 0;
-//        gbc.gridy = 0;
-//        contentPanel.add(tituloLabel, gbc);
-//
-//        String[][] resultados = Funcoes.simularRodada(p);
-//        for (int i = 1; i < 10; i++) {
-//            JLabel resultLabel = new JLabel(resultados[i][0]+" "+resultados[i][1]+" x "+resultados[i][3]+" "+resultados[i][2]);
-//            resultLabel.setFont(new Font("Arial", Font.ITALIC, 18));
-//            resultLabel.setForeground(Color.WHITE);
-//            gbc.gridx = 0;
-//            gbc.gridy = i;
-//            contentPanel.add(resultLabel, gbc);
-//        }
-//
-////        JButton sairButton = new JButton("Voltar");
-//
-//
-//        panel.add(contentPanel, BorderLayout.CENTER);
-////        panel.add(sairButton, BorderLayout.SOUTH);
-//        frame.getContentPane().add(panel);
-//
-//        frame.setSize(MENU_LARGURA, MENU_ALTURA);
-//        frame.setLocationRelativeTo(null);
-//        frame.setVisible(true);
-//
-////        sairButton.addActionListener(new ActionListener() {
-////            @Override
-////            public void actionPerformed(ActionEvent e) {
-////                showPaginaInicial();
-////            }
-////        });
-//    }
+
+    private void mostrarTabela(Player p) {
+        panel.removeAll();
+        panel.repaint();
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+
+        // Adicionar componentes da página
+        JLabel tituloLabel = new JLabel("Tabela do Campeonato ");
+        tituloLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        tituloLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        panel.add(tituloLabel, gbc);
+
+        Liga l = new Liga(p);
+        String[][] dados = new String[20][9];
+
+        String[] colunas = {"Posição", "Time","Jogos", "Pontos","Vitorias","Empates","Derrotas","Gols Marcados","Gols Sofridos"};
+        int i = 0;
+        for (Time t:l.getTabela()){
+            dados[i][0] = Integer.toString(i+1);
+            dados[i][1] = t.getNome();
+            dados[i][2] = Integer.toString(t.getJogos());
+            dados[i][3] = Integer.toString(t.getPontos());
+            dados[i][4] = Integer.toString(t.getVitorias());
+            dados[i][5] = Integer.toString(t.getEmpates());
+            dados[i][6] = Integer.toString(t.getDerrotas());
+            dados[i][7] = Integer.toString(t.getGolsmarcados());
+            dados[i][8] = Integer.toString(t.getGolsofridos());
+
+            i++;
+        }
+
+        JTable tabela = new JTable(dados, colunas);
+        tabela.setFont(new Font("Arial", Font.PLAIN, 16));
+        tabela.setForeground(Color.BLACK);
+        tabela.setBackground(Color.WHITE);
+        tabela.setRowHeight(30);
+        tabela.setEnabled(false);
+
+        JScrollPane scrollPane = new JScrollPane(tabela);
+        scrollPane.setPreferredSize(new Dimension(1500, 600));
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        panel.add(scrollPane, gbc);
+
+        JButton sairButton = new JButton("Voltar");
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        panel.add(sairButton, gbc);
+
+        // Ajustar o tamanho das colunas
+        TableColumnModel columnModel = tabela.getColumnModel();
+        for (int columnIndex = 0; columnIndex < columnModel.getColumnCount(); columnIndex++) {
+            TableColumn column = columnModel.getColumn(columnIndex);
+            if (!column.getHeaderValue().equals("Time")) {
+                column.setPreferredWidth(100); // Defina o tamanho desejado para as colunas que não são do nome
+            }
+        }
+
+        // Atualizar o painel e redimensionar o JFrame
+        panel.revalidate();
+        frame.setSize(1920, 960);
+        frame.setLocationRelativeTo(null);
+
+        sairButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showPaginaInicial(p);
+            }
+        });
+    }
 
 
 }

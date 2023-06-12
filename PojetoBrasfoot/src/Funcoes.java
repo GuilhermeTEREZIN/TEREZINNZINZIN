@@ -101,6 +101,12 @@ public abstract class Funcoes {
             Time time1 = p.getTime();
             Time time2 = p.getTime();
             int[] gols = {0,0};
+//            Liga l = new Liga(p);
+//            if (p.getRodada()>38){
+//                System.out.println("O campeonato acabou o Campeão foi: "+l.lider());
+//                System.out.println("Começe outro jogo");
+//                System.exit(0);
+//            }
             String[][] rodada = importarCsv.Confrontos(p.getRodada());
             int count = 0;
             System.out.println(ConsoleColors.GREEN_BOLD+"Rodada: "+p.getRodada()+" do Campeonato Brasileiro"+ConsoleColors.RESET);
@@ -119,11 +125,11 @@ public abstract class Funcoes {
                 if (time1.getNome().equals(p.getTime().getNome())||time2.getNome().equals(p.getTime().getNome())) {
                     System.out.println(ConsoleColors.CYAN_UNDERLINED+"-------------------------------------\nPróximo Jogo(Digite Algo Para Continuar)"+ConsoleColors.RESET);
                     System.out.println(ConsoleColors.CYAN+ time1.getNome()+" x "+time2.getNome());
-                    //sc.next();
+                    sc.next();
                     Playerp.simularParida(time1,time2,gols);
 
                     System.out.println("(Digite Algo Para Continuar)");
-                    //sc.next();
+                    sc.next();
                 }else {
                     Simulp.simularParida(time1,time2,gols);
                 }
@@ -138,12 +144,19 @@ public abstract class Funcoes {
 
                 if(gols[0]>gols[1]){
                     time1.setPontos(time1.getPontos()+3);
+                    time1.setVitorias(time1.getVitorias()+1);
+                    time2.setDerrotas(time2.getDerrotas()+1);
                 } else if (gols[1]>gols[0]){
                     time2.setPontos(time2.getPontos()+3);
+                    time2.setVitorias(time2.getVitorias()+1);
+                    time1.setDerrotas(time1.getDerrotas()+1);
 
                 }else {
                     time1.setPontos(time1.getPontos()+1);
                     time2.setPontos(time2.getPontos()+1);
+                    time1.setEmpates(time1.getEmpates()+1);
+                    time2.setEmpates(time2.getEmpates()+1);
+
                 }
                 armazenaResults[i][0] = time1.getNome();
                 armazenaResults[i][1] = Integer.toString(gols[0]);
@@ -156,8 +169,7 @@ public abstract class Funcoes {
             System.out.println("Esquema de Apostas descoberto, rodada cancelada");
         }
         p.setRodada(p.getRodada()+1);
-        Liga l = new Liga(p);
-        System.out.println(l.melhorDefesa().getNome());
+
         return armazenaResults;
 
     }

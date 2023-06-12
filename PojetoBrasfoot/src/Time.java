@@ -13,9 +13,12 @@ public class Time {
   private int jogos;
   private int golsmarcados;
   private int golsofridos;
+  private int vitorias;
+  private int derrotas;
+  private int empates;
 
 
-  public Time(int id, String nome, int pontos,int jogos,int golsmarcados,int golsofridos) {
+  public Time(int id, String nome, int pontos,int jogos,int golsmarcados,int golsofridos,int vitorias,int derrotas, int empates) {
     this.nome = nome;
     this.id = id;
     this.pais = Pais.BRA;
@@ -23,6 +26,9 @@ public class Time {
     this.jogos = jogos;
     this.golsmarcados = golsmarcados;
     this.golsofridos = golsofridos;
+    this.vitorias = vitorias;
+    this.empates = empates;
+    this.derrotas = derrotas;
     jogadores = new ArrayList<>();
     titulares = new ArrayList<>();
 
@@ -140,6 +146,31 @@ public class Time {
   public int getJogos() {
     return jogos;
   }
+
+  public int getVitorias() {
+    return vitorias;
+  }
+
+  public int getDerrotas() {
+    return derrotas;
+  }
+
+  public int getEmpates() {
+    return empates;
+  }
+
+  public void setVitorias(int vitorias) {
+    this.vitorias = vitorias;
+  }
+
+  public void setDerrotas(int derrotas) {
+    this.derrotas = derrotas;
+  }
+
+  public void setEmpates(int empates) {
+    this.empates = empates;
+  }
+
   public void setNome(String nome) {
     this.nome = nome;
   }

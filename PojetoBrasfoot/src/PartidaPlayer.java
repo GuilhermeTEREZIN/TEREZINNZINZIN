@@ -20,7 +20,7 @@ public class PartidaPlayer extends Partida{
         Random r = new Random();
 
         for(int i = inicio; i<=fim;i++){
-            System.out.print(i+"' - ");
+            System.out.println(i+"' - ");
 
             try {
 //                TimeUnit.MILLISECONDS.sleep(600);

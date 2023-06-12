@@ -19,13 +19,19 @@ public class importarCsv {
             //nomeTime[3] = jogos
             //nomeTime[4] = golsfeitos
             //nomeTime[5] = golsofridos
+            //nomeTime[6] = vitorias
+            //nomeTime[7] = derrotas
+            //nomeTime[8] = empates
 
             times.add(new Time(Integer.parseInt(nomeTime[0].strip()),
                     nomeTime[1].strip(),
                     Integer.parseInt(nomeTime[2].strip()),
                     Integer.parseInt(nomeTime[3].strip()),
                     Integer.parseInt(nomeTime[4].strip()),
-                    Integer.parseInt(nomeTime[5].strip())));
+                    Integer.parseInt(nomeTime[5].strip()),
+                    Integer.parseInt(nomeTime[6].strip()),
+                    Integer.parseInt(nomeTime[7].strip()),
+                    Integer.parseInt(nomeTime[8].strip())));
             //adciona o time a lista de times
         }
         sc.close();  //closes the scanner
