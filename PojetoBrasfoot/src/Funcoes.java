@@ -96,24 +96,21 @@ public abstract class Funcoes {
 
         try {
             Scanner sc = new Scanner(System.in);
-            PartidaPlayer Playerp =  new PartidaPlayer();
-            PartidaSimulada Simulp = new PartidaSimulada();
             Time time1 = p.getTime();
             Time time2 = p.getTime();
             int[] gols = {0,0};
-//            Liga l = new Liga(p);
-//            if (p.getRodada()>38){
-//                System.out.println("O campeonato acabou o Campeão foi: "+l.lider());
-//                System.out.println("Começe outro jogo");
-//                System.exit(0);
-//            }
+            Liga l = new Liga(p);
+            if (p.getRodada()>38){
+                System.out.println("O campeonato acabou o Campeão foi: "+l.lider().getNome());
+
+                /////salvar////////////////
+                System.exit(0);
+            }
             String[][] rodada = importarCsv.Confrontos(p.getRodada());
             int count = 0;
             System.out.println(ConsoleColors.GREEN_BOLD+"Rodada: "+p.getRodada()+" do Campeonato Brasileiro"+ConsoleColors.RESET);
 
             for (int i = 0;i<10;i++) {
-                gols[0] = 0;
-                gols[1] = 0;
                 for (Time t : p.getTimes()) {
                     if (t.getNome().equals(rodada[i][2])) {
                         time1 = t;
@@ -123,18 +120,22 @@ public abstract class Funcoes {
                 }
                 //partida simulada ou com o time do player
                 if (time1.getNome().equals(p.getTime().getNome())||time2.getNome().equals(p.getTime().getNome())) {
-                    System.out.println(ConsoleColors.CYAN_UNDERLINED+"-------------------------------------\nPróximo Jogo(Digite Algo Para Continuar)"+ConsoleColors.RESET);
+                    PartidaPlayer Playerp =  new PartidaPlayer(time1,time2);
+                    System.out.println(ConsoleColors.CYAN_UNDERLINED+"-------------------------------------\nPróximo Jogo"+ConsoleColors.RESET);
                     System.out.println(ConsoleColors.CYAN+ time1.getNome()+" x "+time2.getNome());
-                    sc.next();
-                    Playerp.simularParida(time1,time2,gols);
+//                    sc.next();
+                    Playerp.simularParida();
+                    gols = Playerp.getGols();
 
-                    System.out.println("(Digite Algo Para Continuar)");
-                    sc.next();
-                    if (i!=9){
-                        System.out.println("Restante da Rodada");
-                    }
+//                    System.out.println("(Digite Algo Para Continuar)");
+//                    sc.next();
+//                    if (i!=9){
+////                        System.out.println("Restante da Rodada");
+//                    }
                 }else {
-                    Simulp.simularParida(time1,time2,gols);
+                    PartidaSimulada Simulp = new PartidaSimulada(time1,time2);
+                    Simulp.simularParida();
+                    gols = Simulp.getGols();
                 }
                 //salvando informações
                 time1.setJogos(time1.getJogos()+1);
@@ -165,7 +166,7 @@ public abstract class Funcoes {
                 armazenaResults[i][1] = Integer.toString(gols[0]);
                 armazenaResults[i][2] = time2.getNome();
                 armazenaResults[i][3] = Integer.toString(gols[1]);
-                TimeUnit.SECONDS.sleep(2);
+//                TimeUnit.SECONDS.sleep(2);
             }
         }catch (Exception e){
             System.out.println(e);
@@ -175,6 +176,15 @@ public abstract class Funcoes {
 
         return armazenaResults;
 
+    }
+    public static void salvarProgresso(String nome,String time,int rodada, float dinheiro, int temporada){
+        exportCsv.exportSave(nome, time, rodada, dinheiro, temporada);
+        //salvarTabela
+    }
+    public static void novaTemporada(String nome,String time,int rodada, float dinheiro, int temporada){
+        TabelaConfrontos.gerarLiga();
+        CopiaCsv.Copiar("times");
+        exportCsv.exportSave(nome, time, 1, dinheiro, temporada);
     }
 }
 

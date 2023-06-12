@@ -214,6 +214,8 @@ public class MenuSwing {
         gbc.gridx = 0;
         gbc.gridy = 2;
         panel.add(proximaLabel, gbc);
+
+
         JLabel partidaLabel;
         try {
             String[] rodada = Funcoes.proximoJogo(p);
@@ -224,6 +226,10 @@ public class MenuSwing {
              partidaLabel = new JLabel("Brasileirão 3° Rodada - Flamengo x Santos");
 
         }
+        if(p.getRodada()>38){
+            Liga l1 = new Liga(p);
+            partidaLabel = new JLabel("O Campeão: "+l1.lider().getNome());
+        }
         partidaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
         partidaLabel.setFont(new Font("Arial", Font.ITALIC, 18)); // Aumentar o tamanho da fonte
         gbc.gridx = 0;
@@ -231,23 +237,35 @@ public class MenuSwing {
         panel.add(partidaLabel, gbc);
 
         // Adicionar botões
+//
+
         JButton proximaPartidaButton = new JButton("Próxima Partida");
+        JButton proximaTemporadaButton = new JButton("Próxima Temporada");
         JButton mostrarTabelaButton = new JButton("Mostrar Tabela");
         JButton mostrarProximaRodada = new JButton("Próxima Rodada");
         JButton salvarButtom = new JButton("Salvar Resultados");
         JButton sairButton = new JButton("Voltar");
+        if (p.getRodada()<=38){
+            gbc.gridx = 0;
+            gbc.gridy = 4;
+            panel.add(proximaPartidaButton, gbc);
 
-        gbc.gridx = 0;
-        gbc.gridy = 4;
-        panel.add(proximaPartidaButton, gbc);
+            gbc.gridx = 0;
+            gbc.gridy = 6;
+            panel.add(mostrarProximaRodada, gbc);
+
+        }else {
+            gbc.gridx = 0;
+            gbc.gridy = 4;
+            panel.add(proximaTemporadaButton, gbc);
+        }
+
 
         gbc.gridx = 0;
         gbc.gridy = 5;
         panel.add(mostrarTabelaButton, gbc);
 
-        gbc.gridx = 0;
-        gbc.gridy = 6;
-        panel.add(mostrarProximaRodada, gbc);
+
 
         gbc.gridx = 0;
         gbc.gridy = 7;
@@ -271,12 +289,22 @@ public class MenuSwing {
             }
         });
 
+        proximaTemporadaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Funcoes.novaTemporada(p.getNome(),p.getTime().getNome(),1,p.getDinheiro(),p.getTemporada()+1);
+                Funcoes.carregarjogo(p);
+
+                panel.removeAll();
+                showPaginaInicial(p);
+            }
+        });
+
         mostrarTabelaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Lógica para a opção "Mostrar Tabela"
                 panel.removeAll();
-
                 mostrarTabela( p);
                 // ...
             }
@@ -295,7 +323,7 @@ public class MenuSwing {
                 ///salvar no times.csv
                 try {
                     ////////salvar tabela
-                    exportCsv.exportSave(p.getNome(),p.getTime().getNome(),p.getRodada(),p.getDinheiro(),p.getTemporada());
+                    Funcoes.salvarProgresso(p.getNome(),p.getTime().getNome(),p.getRodada(),p.getDinheiro(),p.getTemporada());
                     System.out.println("Dados Salvos");
 
 
@@ -514,8 +542,8 @@ public class MenuSwing {
             dados2[0][0] = "Melhor Ataque";
             dados2[1][0] = "Melhor Defesa";
 
-            dados2[0][0] = l.melhorAtaque().getNome();
-            dados2[0][1] = l.melhorDefesa().getNome();
+            dados2[0][1] = l.melhorAtaque().getNome();
+            dados2[1][1] = l.melhorDefesa().getNome();
         }
         String[] colunas2 = {"Estatitica", "Time"};
 
