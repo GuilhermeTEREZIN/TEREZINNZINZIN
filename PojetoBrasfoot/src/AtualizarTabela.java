@@ -7,8 +7,10 @@
 //
 //public class AtualizarTabela {
 //    exportTimes(Player p)
+//id,time,pontos,jogos,golsfeitos,golsofridos,vitorias,derrotas,empates
+
 //        for(Time t:p.getTimes){
 //        ////escreve no arquivo
-//        p.getNome,p.getPontos,p.getJogos,........
+//        write(\np.getId+","+p.getNome+","+p.getPontos+","+p.getJogos,)
 //    }
 //}
