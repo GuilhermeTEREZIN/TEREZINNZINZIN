@@ -16,6 +16,7 @@ public abstract class Funcoes {
         try {
             //Carrega os jogadores nos seus respectivos times
             ArrayList<Time> times = importarCsv.times();
+
             ArrayList<Jogador> jogadores = importarCsv.jogadores();
             times = inserirJogadoresTime(times,jogadores);
             // times contem os times já com os jogadores

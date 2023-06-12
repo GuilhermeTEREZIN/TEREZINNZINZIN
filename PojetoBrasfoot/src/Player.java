@@ -66,7 +66,7 @@ public class Player{
 
     public void printarTimes(){
         for(int i=0;i<getTimes().size();i++){
-            System.out.println(getTimes().get(0).getNome());
+            System.out.println(getTimes().get(i).getNome());
         }
     }
 }

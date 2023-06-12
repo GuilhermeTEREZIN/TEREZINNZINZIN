@@ -118,8 +118,8 @@ public class PartidaPlayer extends Partida{
 
     }
     //private static void naracaoChance(Time time,boolean contrAtaque)
-    //private static void narracao(Time time1,boolean contraAtaque)
-    //private static void narracao(Time time1,Time time2,boolean contraAtaque)
+    //private static void narracao(Time time1,boolean contraAtaque) ////NARAÇÃO PRA ERRO
+    //private static void narracao(Time time1,Time time2,boolean contraAtaque) /// GOLS
     //
         //private static int acrescimos: pega um número aleatório de até 100, se esse número for menor q 5(sem acrescimo), se for menor que 15 = 1 min, menor que 30 = 2 min,
         //menor que 50 = 3 min, menor que 70 = 4 min, menor que 80 = 5 min, menor que 85 = 6, menor que 90 = 7, menor que 93 = 8, menor que 96 = 9, menor que 100 = 10,

@@ -84,7 +84,7 @@ public class importarCsv {
         File file = new File("./PojetoBrasFoot/save/save.csv"); // abre o arquivo csv
         //System.out.println(file.exists());
         Scanner sc = new Scanner(file);//inicia a classe scanner
-        // sc.useDelimiter(",");   //sets the delimiter pattern
+         sc.useDelimiter(",");   //sets the delimiter pattern
         CarregarSave = sc.next().split(",");
 
         while (sc.hasNext())  //returns a boolean value

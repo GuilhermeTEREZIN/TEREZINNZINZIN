@@ -11,6 +11,7 @@ public class exportCsv {
             //temporada
             FileWriter arq = new FileWriter("./PojetoBrasFoot/save/save.csv");
             arq.write( "Nome,Time,rodada,Dinheiro,Temporada");
+            ///////
             arq.write("\n"+nome+","+time+","+rodada+","+dinheiro+","+temporada );
             arq.close();
         }
