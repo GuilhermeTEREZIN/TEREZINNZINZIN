@@ -13,11 +13,14 @@ public class AtualizarTabela {
         try {
             FileWriter arq = new FileWriter("./PojetoBrasFoot/save/times.csv");
             arq.write("id,time,pontos,jogos,golsfeitos,golsofridos,vitorias,derrotas,empates");
+            p.printarTimes();
+            int i = 0;
             for (Time t : p.getTimes()) {
-                ////escreve no arquivo
-                arq.write("\n"+t.getId() + "," + t.getNome() + "," + t.getPontos() + "," + t.getJogos()+ "," + t.getGolsmarcados() +
-                        "," + t.getGolsofridos() + "," + t.getVitorias() + "," + t.getDerrotas() + "," + t.getEmpates());
+//                System.out.println(i);
+//                i++;
+                arq.write("\n"+t.getId()+","+t.getNome()+","+t.getPontos()+","+t.getJogos()+","+t.getGolsmarcados()+","+t.getGolsofridos()+","+ t.getVitorias()+","+t.getDerrotas()+","+t.getEmpates());
             }
+            arq.close();
         }
         catch (IOException e) {
             System.out.println(e);

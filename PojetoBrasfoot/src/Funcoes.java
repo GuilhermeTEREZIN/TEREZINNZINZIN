@@ -24,16 +24,20 @@ public abstract class Funcoes {
             String[] save = importarCsv.CarregarSave();//carrega as informações do save
 
             for (Time t:times){
-                if(t.getNome().equals(save[1])){
+//                System.out.println(t.getNome());
+                if(t.getNome().equals(save[1].toString())){
                     p.setTime(t);
                     break;
                 }
             }
+
             p.setNome(save[0]);
             p.setRodada(Integer.parseInt(save[2]));
             p.setDinheiro(Float.parseFloat(save[3]));
             p.setTemporada(Integer.parseInt(save[4]));
+
             p.setTimes(times);
+//            p.printarTimes();
             //System.out.println(p.getNome()+" "+p.getTime().getNome());
 
         }catch (Exception e){
@@ -178,8 +182,10 @@ public abstract class Funcoes {
         return armazenaResults;
 
     }
-    public static void salvarProgresso(String nome,String time,int rodada, float dinheiro, int temporada){
+    public static void salvarProgresso(String nome,String time,int rodada, float dinheiro, int temporada,Player p){
+
         exportCsv.exportSave(nome, time, rodada, dinheiro, temporada);
+        AtualizarTabela.AtualizarTabela(p);
         //salvarTabela
     }
     public static void novaTemporada(String nome,String time,int rodada, float dinheiro, int temporada){

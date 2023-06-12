@@ -323,7 +323,7 @@ public class MenuSwing {
                 ///salvar no times.csv
                 try {
                     ////////salvar tabela
-                    Funcoes.salvarProgresso(p.getNome(),p.getTime().getNome(),p.getRodada(),p.getDinheiro(),p.getTemporada());
+                    Funcoes.salvarProgresso(p.getNome(),p.getTime().getNome(),p.getRodada(),p.getDinheiro(),p.getTemporada(),p);
                     System.out.println("Dados Salvos");
 
 
