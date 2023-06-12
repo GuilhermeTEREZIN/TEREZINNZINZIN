@@ -1,11 +1,13 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class PartidaPlayer extends Partida{
-
+    private ArrayList<Integer> historico;
     public PartidaPlayer(Time time1,Time time2){
         super(time1,time2);
 //        getGols() = new int[2];
+        historico = new ArrayList<>();
         resetarGols();
     }
 
@@ -33,21 +35,21 @@ public class PartidaPlayer extends Partida{
             System.out.println(i+"' - ");
 
             try {
-//                TimeUnit.MILLISECONDS.sleep(600);
+                TimeUnit.MILLISECONDS.sleep(600);
             }catch (Exception e){}
 
-            if (r.nextInt(qtdeJogadas) == 0){
+            if (r.nextInt(qtdeJogadas) == 0){ // chance de gol de algum dos times
                 chanceGol(chanceGol);
             }
         }
         int acrescimos = 5;
         if(acrescimos>0){
-            System.out.println("Acrescimos: +"+acrescimos );
+            System.out.println(ConsoleColors.GREEN_BOLD+"Acrescimos: +"+acrescimos+ConsoleColors.RESET );
             for ( int i = fim+1;i<=fim+acrescimos;i++){
                 System.out.println(fim+"+"+(i-fim)+"' - ");
 
                 try {
-//                    TimeUnit.MILLISECONDS.sleep(800);
+                    TimeUnit.MILLISECONDS.sleep(800);
                 }catch (Exception e){}
 
                 if (r.nextInt(qtdeJogadas) == 0){
@@ -79,15 +81,15 @@ public class PartidaPlayer extends Partida{
         int t2 = r.nextInt(50)+calcularBonus(getTime1(),getTime2());
         //System.out.println(t1 +" "+ t2);
         if (t1>t2){
-            if( r.nextInt(100)<chance){
+            //chance do time 1
+            if( r.nextInt(100)<chance){ // gol
                 setGols1(getGols()[0]+1);
-            }else if( r.nextInt(5)==0){ // chance de contra-ataque
-                if ( r.nextInt(100)<chance){
-                    if(statusPartida().equals("EMPATE")){
-                        //naração de virada
-                    }else {
-                        //naração de contra atauqe
-                    }
+
+
+                // chance de contra-ataque
+            }else if( r.nextInt(5)==0){
+                if ( r.nextInt(100)<chance+getTime2().over(true)/20){//gol do time 1 de contra ataque
+//
                     getGols()[1]+=1;
                 }
             }
@@ -95,7 +97,7 @@ public class PartidaPlayer extends Partida{
             if( r.nextInt(100)<chance){
                getGols()[1]+=1;
             }else if( r.nextInt(5)==0){//chance de contra-ataque
-                if ( r.nextInt(100)<chance){
+                if ( r.nextInt(100)<chance+getTime2().over(true)/20){ // gol do time 1 de contra ataque
                     getGols()[0]+=1;
                 }
             }
@@ -124,4 +126,7 @@ public class PartidaPlayer extends Partida{
         //atacante
         //meio
         //def
+    public void addHistorico(){
+        historico.add(getGols()[0]-getGols()[1]);
+    }
 }
