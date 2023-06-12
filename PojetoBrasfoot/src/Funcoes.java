@@ -156,6 +156,8 @@ public abstract class Funcoes {
             System.out.println("Esquema de Apostas descoberto, rodada cancelada");
         }
         p.setRodada(p.getRodada()+1);
+        Liga l = new Liga(p);
+        System.out.println(l.melhorDefesa().getNome());
         return armazenaResults;
 
     }

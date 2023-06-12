@@ -6,7 +6,7 @@ public class PartidaSimulada extends Partida {
     @Override
     public void simularParida(Time time1,Time time2,int[] gols) throws Exception{
         if(time1.getTitulares().size()<11||time2.getTitulares().size()<11){
-            throw new Exception("Partida Cancelada");
+            throw new Exception();
         }
         for(int i = 0; i<=90;i++){
             Random r = new Random();

@@ -17,7 +17,7 @@ public abstract class Partida {
             }
         }
     }
-    //Mostra o placar em azul
+    //Mostra o placar em vermelho
     public void placar(Time time1, Time time2,int[] gols) {
         System.out.println(ConsoleColors.RED  +time1.getNome()+" "+gols[0]+" X "+gols[1]+" "+time2.getNome()+ConsoleColors.RESET);
     }
