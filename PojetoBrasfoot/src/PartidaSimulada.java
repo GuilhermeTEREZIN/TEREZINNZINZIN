@@ -14,7 +14,7 @@ public class PartidaSimulada extends Partida {
                 chanceGol(time1,time2,gols,17);
             }
         }
-        //placar(time1,time2,gols);
+        placar(time1,time2,gols);
 
     }
 
