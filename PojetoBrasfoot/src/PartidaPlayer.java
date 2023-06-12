@@ -35,7 +35,7 @@ public class PartidaPlayer extends Partida{
 
         for(int i = inicio; i<=fim;i++){
             this.minuto = i;
-            System.out.println(i+"' - ");
+            System.out.println(ConsoleColors.CYAN_BOLD+i+"' - "+ConsoleColors.RESET);
 
             try {
                 TimeUnit.MILLISECONDS.sleep(600);
@@ -49,7 +49,7 @@ public class PartidaPlayer extends Partida{
         if(acrescimos>0){
             System.out.println(ConsoleColors.GREEN_BOLD+"Acrescimos: +"+acrescimos+ConsoleColors.RESET );
             for ( int i = fim+1;i<=fim+acrescimos;i++){
-                System.out.println(fim+"+"+(i-fim)+"' - ");
+                System.out.println(ConsoleColors.CYAN_BOLD+fim+"+"+(i-fim)+"' - "+ConsoleColors.RESET);
 
                 try {
                     TimeUnit.MILLISECONDS.sleep(800);
@@ -105,7 +105,7 @@ public class PartidaPlayer extends Partida{
                 }
             }
         }
-       // placar(time1,time2,gols);
+       placar();
 
     }
     @Override
@@ -117,9 +117,9 @@ public class PartidaPlayer extends Partida{
         System.out.println(ConsoleColors.CYAN_BOLD+getTime1().getNome()+" "+getGols()[0]+"("+golsPenalti[0]+") X "+getGols()[1]+"("+golsPenalti[1]+") "+getTime2().getNome()+ConsoleColors.RESET);
 
     }
-    //private static void naracaoChance(Time time1,int minuto,int[]gols,boolean contrAtaque)
-    //private static void narracao(Time time1,int minuto,int[] gols,boolean contraAtaque)
-    //private static void narracao(Time time1,Time time2,int minuto, int[] gols,boolean contraAtaque)
+    //private static void naracaoChance(Time time,boolean contrAtaque)
+    //private static void narracao(Time time1,boolean contraAtaque)
+    //private static void narracao(Time time1,Time time2,boolean contraAtaque)
     //
         //private static int acrescimos: pega um número aleatório de até 100, se esse número for menor q 5(sem acrescimo), se for menor que 15 = 1 min, menor que 30 = 2 min,
         //menor que 50 = 3 min, menor que 70 = 4 min, menor que 80 = 5 min, menor que 85 = 6, menor que 90 = 7, menor que 93 = 8, menor que 96 = 9, menor que 100 = 10,
