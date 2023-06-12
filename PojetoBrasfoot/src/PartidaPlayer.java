@@ -4,11 +4,13 @@ import java.util.concurrent.TimeUnit;
 
 public class PartidaPlayer extends Partida{
     private ArrayList<Integer> historico;
+    private int minuto;
     public PartidaPlayer(Time time1,Time time2){
         super(time1,time2);
 //        getGols() = new int[2];
         historico = new ArrayList<>();
         resetarGols();
+        minuto = 0;
     }
 
     @Override
@@ -32,6 +34,7 @@ public class PartidaPlayer extends Partida{
         Random r = new Random();
 
         for(int i = inicio; i<=fim;i++){
+            this.minuto = i;
             System.out.println(i+"' - ");
 
             try {
@@ -83,22 +86,22 @@ public class PartidaPlayer extends Partida{
         if (t1>t2){
             //chance do time 1
             if( r.nextInt(100)<chance){ // gol
-                setGols1(getGols()[0]+1);
+                gol(0);
 
 
                 // chance de contra-ataque
             }else if( r.nextInt(5)==0){
                 if ( r.nextInt(100)<chance+getTime2().over(true)/20){//gol do time 1 de contra ataque
 //
-                    getGols()[1]+=1;
+                    gol(1);
                 }
             }
         }else if (t2>t1){
             if( r.nextInt(100)<chance){
-               getGols()[1]+=1;
+               gol(1);
             }else if( r.nextInt(5)==0){//chance de contra-ataque
                 if ( r.nextInt(100)<chance+getTime2().over(true)/20){ // gol do time 1 de contra ataque
-                    getGols()[0]+=1;
+                    gol(0);
                 }
             }
         }
@@ -128,5 +131,15 @@ public class PartidaPlayer extends Partida{
         //def
     public void addHistorico(){
         historico.add(getGols()[0]-getGols()[1]);
+    }
+    public void gol(int ladoGol){
+        if (ladoGol == 0){
+            this.setGols1(this.getGols()[0]+1);
+
+        }else{
+            this.setGols2(this.getGols()[1]+1);
+
+        }
+        addHistorico();
     }
 }
