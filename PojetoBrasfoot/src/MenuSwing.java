@@ -32,6 +32,13 @@ public class MenuSwing {
         gbc.insets = new Insets(10, 10, 10, 10); // Definir margens
 
         // Criar os componentes do menu
+        JLabel tituloLabel = new JLabel("BrassFoot 0.5");
+        tituloLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        tituloLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        panel.add(tituloLabel, gbc);
+
         JButton novoJogoButton = new JButton("Novo Jogo");
         JButton continuarButton = new JButton("Continuar");
         JButton sairButton = new JButton("Sair");
@@ -44,15 +51,15 @@ public class MenuSwing {
 
         // Adicionar os componentes ao painel
         gbc.gridx = 0;
-        gbc.gridy = 0;
+        gbc.gridy = 1;
         panel.add(novoJogoButton, gbc);
 
         gbc.gridx = 0;
-        gbc.gridy = 1;
+        gbc.gridy = 2;
         panel.add(continuarButton, gbc);
 
         gbc.gridx = 0;
-        gbc.gridy = 2;
+        gbc.gridy = 3;
         panel.add(sairButton, gbc);
 
         // Adicionar o painel ao JFrame
@@ -76,7 +83,9 @@ public class MenuSwing {
             public void actionPerformed(ActionEvent e) {
                 // Lógica para a opção "Continuar"
                 //JOptionPane.showMessageDialog(frame, "Continuar selecionado");
-                showPaginaInicial();
+                Player p = new Player();
+                Funcoes.carregarjogo(p);
+                showPaginaInicial(p);
             }
         });
 
@@ -155,7 +164,9 @@ public class MenuSwing {
                 panel.removeAll();
                 //salvar no arquivo save
                 Funcoes.iniciarnovoJogo(nome,time);
-                showPaginaInicial();
+                Player p = new Player();
+                Funcoes.carregarjogo(p);
+                showPaginaInicial(p);
             }
         });
 
@@ -170,9 +181,8 @@ public class MenuSwing {
         });
     }
 
-    private void showPaginaInicial() {
-        Player p = new Player();
-        Funcoes.carregarjogo(p);
+    private void showPaginaInicial(Player p) {
+
         panel.removeAll();
         panel.repaint();
 
@@ -221,7 +231,7 @@ public class MenuSwing {
         JButton proximaPartidaButton = new JButton("Próxima Partida");
         JButton mostrarTabelaButton = new JButton("Mostrar Tabela");
         JButton mostrarProximaRodada = new JButton("Próxima Rodada");
-        JButton sairButton = new JButton("Sair");
+        JButton sairButton = new JButton("Voltar");
 
         gbc.gridx = 0;
         gbc.gridy = 4;
@@ -320,7 +330,7 @@ public class MenuSwing {
             panel.add(partidaLabel, gbc);
         }
 
-        JButton sairButton = new JButton("Sair");
+        JButton sairButton = new JButton("Voltar");
         gbc.gridx = 0;
         gbc.gridy = i+3;
         panel.add(sairButton, gbc);
@@ -333,7 +343,7 @@ public class MenuSwing {
         sairButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                showPaginaInicial();
+                showPaginaInicial(p);
             }
         });
     }
@@ -342,42 +352,109 @@ public class MenuSwing {
         panel.removeAll();
         panel.repaint();
 
-        // Configurar o layout do painel principal
-        panel.setLayout(new BorderLayout());
-
-        // Criar o painel interno para adicionar os componentes
-        JPanel contentPanel = new JPanel(new GridBagLayout());
-        contentPanel.setBackground(new Color(0, 128, 0)); // Definir cor de fundo verde escuro
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10); // Definir margens
+        gbc.insets = new Insets(10, 10, 10, 10);
 
-        // Adicionar os componentes à página
-        JLabel tituloLabel = new JLabel("Rodada");
+        // Adicionar componentes da página
+        JLabel tituloLabel = new JLabel("Detalhes da Rodada");
         tituloLabel.setFont(new Font("Arial", Font.BOLD, 24));
         tituloLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
         gbc.gridx = 0;
         gbc.gridy = 0;
-        contentPanel.add(tituloLabel, gbc);
+        panel.add(tituloLabel, gbc);
 
-        // Adicionar mais componentes conforme necessário
+        JLabel rodadaLabel = new JLabel("Rodada: " + p.getRodada());
+        rodadaLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        rodadaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        panel.add(rodadaLabel, gbc);
         int i = 0;
-        Funcoes.simularRodada(p);
+        try {
+            String[][] rodada = Funcoes.simularRodada(p);
 
-        // Criar o painel rolável
-        JScrollPane scrollPane = new JScrollPane(contentPanel);
-        scrollPane.setPreferredSize(new Dimension(MENU_LARGURA, MENU_ALTURA));
+            for (i = 0;i<10;i++){
+                JLabel partidaLabel = new JLabel(rodada[i][0] +" " + rodada[i][1]+" x "+ rodada[i][3]+" " + rodada[i][2]);
+                partidaLabel.setFont(new Font("Arial", Font.ITALIC, 18));
+                partidaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+                gbc.gridx = 0;
+                gbc.gridy = i+2;
+                panel.add(partidaLabel, gbc);
 
-        // Adicionar o painel rolável ao painel principal
-        panel.add(scrollPane, BorderLayout.CENTER);
+            }
+        }catch(Exception e){
+            JLabel partidaLabel = new JLabel("Jogos ainda não Definidos");
+            partidaLabel.setFont(new Font("Arial", Font.BOLD, 18));
+            partidaLabel.setForeground(Color.WHITE); // Definir cor do texto como branco
+            gbc.gridx = 0;
+            gbc.gridy = 2;
+            panel.add(partidaLabel, gbc);
+        }
 
-        // Adicionar o painel ao JFrame
-        frame.getContentPane().add(panel);
+        JButton sairButton = new JButton("Voltar");
+        gbc.gridx = 0;
+        gbc.gridy = i+3;
+        panel.add(sairButton, gbc);
 
-        // Configurar o tamanho e a visibilidade do JFrame
+        // Atualizar o painel e redimensionar o JFrame
+        panel.revalidate();
         frame.setSize(MENU_LARGURA, MENU_ALTURA);
-        frame.setLocationRelativeTo(null); // Centralizar a janela na tela
-        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+
+        sairButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showPaginaInicial(p);
+            }
+        });
     }
+
+//    private void simRodada(Player p) {
+//        panel.removeAll();
+//        panel.repaint();
+//
+//        panel.setLayout(new BorderLayout());
+//
+//        JPanel contentPanel = new JPanel(new GridBagLayout());
+//        contentPanel.setBackground(new Color(0, 128, 0));
+//        GridBagConstraints gbc = new GridBagConstraints();
+//        gbc.insets = new Insets(10, 10, 10, 10);
+//
+//        JLabel tituloLabel = new JLabel("Resumo da Rodada:");
+//        tituloLabel.setFont(new Font("Arial", Font.BOLD, 24));
+//        tituloLabel.setForeground(Color.WHITE);
+//        gbc.gridx = 0;
+//        gbc.gridy = 0;
+//        contentPanel.add(tituloLabel, gbc);
+//
+//        String[][] resultados = Funcoes.simularRodada(p);
+//        for (int i = 1; i < 10; i++) {
+//            JLabel resultLabel = new JLabel(resultados[i][0]+" "+resultados[i][1]+" x "+resultados[i][3]+" "+resultados[i][2]);
+//            resultLabel.setFont(new Font("Arial", Font.ITALIC, 18));
+//            resultLabel.setForeground(Color.WHITE);
+//            gbc.gridx = 0;
+//            gbc.gridy = i;
+//            contentPanel.add(resultLabel, gbc);
+//        }
+//
+////        JButton sairButton = new JButton("Voltar");
+//
+//
+//        panel.add(contentPanel, BorderLayout.CENTER);
+////        panel.add(sairButton, BorderLayout.SOUTH);
+//        frame.getContentPane().add(panel);
+//
+//        frame.setSize(MENU_LARGURA, MENU_ALTURA);
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
+//
+////        sairButton.addActionListener(new ActionListener() {
+////            @Override
+////            public void actionPerformed(ActionEvent e) {
+////                showPaginaInicial();
+////            }
+////        });
+//    }
 
 
 }

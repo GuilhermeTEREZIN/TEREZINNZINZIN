@@ -7,14 +7,12 @@ public class PartidaPlayer extends Partida{
         if(time1.getTitulares().size()<11||time2.getTitulares().size()<11){
             throw new Exception("Partida Cancelada");
         }
-
         simularEtapa(time1,time2,gols,10,15,1,45);
         System.out.println("Fim do Primeiro Tempo\n");
-        TimeUnit.SECONDS.sleep(5);
+//        TimeUnit.SECONDS.sleep(5);
         simularEtapa(time1,time2,gols,10,15,46,90);
         System.out.println("Fim da Partida");
         placar(time1,time2,gols);
-
     }
 
     public void simularEtapa(Time time1,Time time2,int[] gols,int qtdeJogadas, int chanceGol,int inicio,int fim){
@@ -24,7 +22,7 @@ public class PartidaPlayer extends Partida{
             System.out.println(i+"'");
 
             try {
-                TimeUnit.MILLISECONDS.sleep(0);
+//                TimeUnit.MILLISECONDS.sleep(600);
             }catch (Exception e){}
 
             if (r.nextInt(qtdeJogadas) == 0){
@@ -38,7 +36,7 @@ public class PartidaPlayer extends Partida{
                 System.out.println(fim+"+"+(i-fim)+"'");
 
                 try {
-                    TimeUnit.MILLISECONDS.sleep(0);
+//                    TimeUnit.MILLISECONDS.sleep(600);
                 }catch (Exception e){}
 
                 if (r.nextInt(qtdeJogadas) == 0){
@@ -60,7 +58,6 @@ public class PartidaPlayer extends Partida{
             }else if( r.nextInt(5)==0){ // chance de contra-ataque
                 if ( r.nextInt(100)<chance){
                     gols[1]+=0;
-
                 }
             }
         }else if (t2>t1){

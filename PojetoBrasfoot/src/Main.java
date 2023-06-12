@@ -5,6 +5,7 @@ public class Main {
 //        Player p = new Player();
 //        Funcoes.carregarjogo(p);
 //        Funcoes.proximaRodada(p);
+//        System.out.println(p.);
         MenuSwing.iniciarInterface();
     }
 }

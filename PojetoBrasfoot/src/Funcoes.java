@@ -151,12 +151,11 @@ public abstract class Funcoes {
                 armazenaResults[i][3] = Integer.toString(gols[1]);
 //                TimeUnit.SECONDS.sleep(2);
             }
-            p.setRodada(p.getRodada()+1);
         }catch (Exception e){
             System.out.println(e);
             System.out.println("Esquema de Apostas descoberto, rodada cancelada");
         }
-
+        p.setRodada(p.getRodada()+1);
         return armazenaResults;
 
     }
