@@ -12,7 +12,7 @@ public class PartidaSimulada extends Partida {
     @Override
     public void simularParida() throws Exception{
         if(getTime1().getTitulares().size()<11||getTime2().getTitulares().size()<11){
-            throw new Exception();
+            throw new erroPartida();
         }
         resetarGols();
 
